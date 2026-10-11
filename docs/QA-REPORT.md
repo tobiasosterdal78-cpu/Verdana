@@ -32,3 +32,9 @@ Initial dependency audit: five high findings in the development-only eslint-conf
 - Header and hero images load correctly. Footer image is lazy-loaded and was verified after scrolling into view and waiting for image decode. All three placements loaded successfully.
 - Mobile navigation still opens and closes. No browser console or page errors during these checks.
 - Updated full-page and hero screenshots are in the workspace outputs directory. Overall design approval remains pending.
+
+## Additional services — 2026-10-11
+- Added Förvaltning and Konsulttjänster to the hero labels and dedicated service cards.
+- ESLint, TypeScript and diff whitespace checks passed.
+- Playwright verified all five hero labels, six cards and no horizontal overflow at 320, 375, 768 and 1440 pixels. Grid columns were 1, 1, 2 and 3 respectively. No page errors.
+- Visually inspected desktop service grid and mobile hero wrapping. No new production build was needed for this copy and grid adjustment.

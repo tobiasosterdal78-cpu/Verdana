@@ -11,7 +11,9 @@ import {
   Plus,
   Route,
   Settings2,
+  ShieldCheck,
   Sparkles,
+  UsersRound,
   Workflow,
 } from "lucide-react";
 import { Navigation } from "@/components/navigation";
@@ -47,6 +49,20 @@ const services = [
     title: "Support & optimering",
     text: "Affären står inte still. Vi hjälper dig att utveckla, förenkla och få mer värde ur ditt affärssystem över tid.",
     tag: "En långsiktig relation",
+  },
+  {
+    number: "05",
+    icon: ShieldCheck,
+    title: "Förvaltning",
+    text: "Håll affärssystemet i takt med verksamheten. Vi hjälper dig att planera uppgraderingar, prioritera förändringar och samordna den löpande förvaltningen.",
+    tag: "Kontinuitet och framförhållning",
+  },
+  {
+    number: "06",
+    icon: UsersRound,
+    title: "Konsulttjänster",
+    text: "Förstärk ditt team med kompetens inom Business Central. Vi hjälper till med behovsanalys, kravställning och specialiststöd i projekt och löpande arbete.",
+    tag: "Kompetens där den behövs",
   },
 ];
 
@@ -87,10 +103,10 @@ export default function Home() {
               </div>
               <div className="hero-footnote">
                 <span>RÅDGIVNING</span>
-                <i />
                 <span>IMPLEMENTATION</span>
-                <i />
                 <span>UTVECKLING</span>
+                <span>FÖRVALTNING</span>
+                <span>KONSULTTJÄNSTER</span>
               </div>
             </div>
             <div className="hero-brand">

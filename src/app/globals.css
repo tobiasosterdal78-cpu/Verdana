@@ -238,6 +238,7 @@ h1 span {
 }
 .hero-footnote {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   align-items: center;
   font-size: 8px;
@@ -245,7 +246,13 @@ h1 span {
   color: #77869f;
   margin-top: 42px;
 }
-.hero-footnote i {
+.hero-footnote span {
+  display: inline-flex;
+  align-items: center;
+}
+.hero-footnote span + span::before {
+  content: "";
+  margin-right: 12px;
   height: 3px;
   width: 3px;
   background: #526782;
@@ -385,7 +392,7 @@ h3 {
 }
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 .service-card {
@@ -920,7 +927,7 @@ h3 {
     flex-direction: column;
   }
   .hero-footnote {
-    font-size: 6px;
+    font-size: 8px;
   }
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1081,7 +1088,7 @@ h3 {
   }
   .hero-footnote {
     margin-top: 28px;
-    font-size: 6px;
+    font-size: 8px;
     letter-spacing: 1.1px;
     gap: 9px;
   }

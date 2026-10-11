@@ -8,5 +8,5 @@
 - Shape: small corner radii, thin cool-gray borders, generous space. No fabricated logo or stock imagery.
 - Components: dark navigation, original-logo hero, open benefits grid, service cards, ecosystem diagram, numbered process, contact disclosure.
 - Motion: subtle hover movement and once-per-visit scroll reveal. Reduced motion disables transitions and smooth scrolling.
-- Responsive: 4-column services become 2 then 1; process becomes 2 columns; mobile navigation is a toggleable disclosure with Escape support.
+- Responsive: six services use 3 columns, then 2, then 1; hero service labels wrap without separating their bullet markers; process becomes 2 columns; mobile navigation is a toggleable disclosure with Escape support.
 - Approval: original logo inspected and integrated; the overall design still awaits user approval.

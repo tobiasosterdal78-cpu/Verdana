@@ -9,6 +9,7 @@ M0 — homepage design preview. Visual approval pending.
 - Created Swedish homepage: responsive navigation, hero, benefits, services, ecosystem concept, process, about teaser, contact concept and footer.
 - Added project continuity files. Original master brief retained.
 - Received and preserved the official logo; integrated it in header, hero, footer and favicon. Removed the temporary text brand and hero concept artwork.
+- Added owner-requested Förvaltning and Konsulttjänster to the hero service labels and as two dedicated service cards. Six services use a responsive 3/2/1-column layout.
 
 ## Current task
 Homepage design preview verified and ready for user review. Local development server: http://127.0.0.1:3000.
