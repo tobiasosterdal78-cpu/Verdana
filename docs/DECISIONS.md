@@ -20,3 +20,6 @@ Framework initialization checked against https://nextjs.org/docs/app/getting-sta
 
 ## Local checkpoint attribution
 No Git author identity was configured. Use an explicit per-command automation identity, Codex <codex@local.invalid>, for the initial local checkpoint. This does not impersonate the owner or change global Git configuration.
+
+## 2026-10-11: Original logo received
+Robin supplied the original 1254 x 1254 PNG. Preserve it unchanged in public/brand/verdana-original.png and display it through Next Image in header, hero and footer. Replace the provisional hero diagram with the original emblem and wordmark. CSS frames empty margins in compact placements and blends only the background edges. Use the original file for the favicon until a dedicated small icon is supplied. This resolves the missing-asset blocker; visual approval is still pending.

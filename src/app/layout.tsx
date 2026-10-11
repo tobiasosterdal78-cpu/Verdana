@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Microsoft Dynamics 365 Business Central, smarta integrationer och rådgivning som tar din verksamhet framåt.",
   robots: { index: false, follow: false },
-  icons: { icon: "data:," },
+  icons: { icon: { url: "/brand/verdana-original.png", type: "image/png" } },
 };
 
 export default function RootLayout({

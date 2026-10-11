@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
+import { BrandLogo } from "@/components/brand-logo";
 
 const links = [
   ["Business Central", "#business-central"],
@@ -16,7 +17,7 @@ export function Navigation() {
     <header className="site-header">
       <div className="container navigation">
         <a className="brand" href="#" aria-label="Verdana, startsidan">
-          Verdana<span className="brand-dot">.</span>
+          <BrandLogo />
         </a>
         <nav className="desktop-nav" aria-label="Huvudnavigation">
           {links.map(([label, href]) => (

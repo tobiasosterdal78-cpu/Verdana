@@ -15,6 +15,6 @@ npm run typecheck
 npm run lint
 ```
 
-The homepage uses in-page navigation. Booking and contact delivery are not connected. The official logo is pending. Search indexing is disabled for this preview.
+The homepage uses in-page navigation. Booking and contact delivery are not connected. The owner-supplied original logo appears in the header, hero and footer. Search indexing is disabled for this preview.
 
 Read CLAUDE.md and docs/PROGRESS.md before continuing. Design approval is required before expanding the site.

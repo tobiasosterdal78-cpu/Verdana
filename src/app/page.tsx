@@ -6,7 +6,6 @@ import {
   CircleDot,
   Cloud,
   Component,
-  Database,
   Layers3,
   Network,
   Plus,
@@ -17,6 +16,8 @@ import {
 } from "lucide-react";
 import { Navigation } from "@/components/navigation";
 import { Reveal } from "@/components/reveal";
+import Image from "next/image";
+import { BrandLogo } from "@/components/brand-logo";
 
 const services = [
   {
@@ -48,69 +49,6 @@ const services = [
     tag: "En långsiktig relation",
   },
 ];
-
-function SystemArtwork() {
-  return (
-    <div
-      className="system-art"
-      role="img"
-      aria-label="Konceptillustration: ekonomi, försäljning och logistik samlas kring Business Central"
-    >
-      <div className="art-grid" />
-      <div className="orbital orbital-one" />
-      <div className="orbital orbital-two" />
-      <span className="art-coordinate">SYSTEM / SAMSPEL</span>
-      <div className="system-stack">
-        <div className="system-layer layer-bottom">
-          <span className="layer-label">
-            <Database size={16} /> EN GEMENSAM GRUND
-          </span>
-          <div className="data-lines">
-            <i />
-            <i />
-            <i />
-            <i />
-            <i />
-            <i />
-          </div>
-        </div>
-        <div className="system-layer layer-middle">
-          <span className="layer-label">
-            <Workflow size={16} /> SAMMANKOPPLADE PROCESSER
-          </span>
-          <div className="process-dots">
-            <i />
-            <span />
-            <i />
-            <span />
-            <i />
-          </div>
-        </div>
-        <div className="system-layer layer-top">
-          <div className="system-topline">
-            <Component size={23} />
-            <span>MICROSOFT DYNAMICS 365</span>
-            <span className="status-dot" />
-          </div>
-          <strong>
-            Business
-            <br />
-            Central<span>.</span>
-          </strong>
-          <div className="system-modules">
-            <span>Ekonomi</span>
-            <span>Försäljning</span>
-            <span>Logistik</span>
-          </div>
-        </div>
-      </div>
-      <div className="art-note">
-        <span className="status-dot" /> Allt hänger ihop.
-      </div>
-      <span className="art-caption">ETT SYSTEM. FLER MÖJLIGHETER.</span>
-    </div>
-  );
-}
 
 export default function Home() {
   return (
@@ -155,7 +93,16 @@ export default function Home() {
                 <span>UTVECKLING</span>
               </div>
             </div>
-            <SystemArtwork />
+            <div className="hero-brand">
+              <Image
+                src="/brand/verdana-original.png"
+                alt="Verdanas originallogotyp med ett blått och silverfärgat V"
+                width={1254}
+                height={1254}
+                sizes="(max-width: 600px) 100vw, 50vw"
+                preload
+              />
+            </div>
           </section>
           <div className="hero-baseline container">
             <span>Teknik som förenklar. En relation som håller.</span>
@@ -191,8 +138,7 @@ export default function Home() {
                   <span>kan verksamheten växa.</span>
                 </h2>
                 <p>
-                  Färre omvägar mellan människor, information och beslut.{" "}
-                  <br />
+                  Färre omvägar mellan människor, information och beslut. <br />
                   Vi hjälper dig att skapa en helhet som fungerar i praktiken.
                 </p>
               </div>
@@ -244,8 +190,7 @@ export default function Home() {
                 </h2>
               </div>
               <p>
-                Från det första vägvalet till nästa förbättring.{" "}
-                <br />
+                Från det första vägvalet till nästa förbättring. <br />
                 Vi möter dig där du är och tar er vidare tillsammans.
               </p>
             </Reveal>
@@ -343,8 +288,7 @@ export default function Home() {
                 </h2>
               </div>
               <p>
-                Teknik är bara en del av resan. Gemensam förståelse,{" "}
-                <br />
+                Teknik är bara en del av resan. Gemensam förståelse, <br />
                 tydliga prioriteringar och delaktighet tar oss framåt.
               </p>
             </Reveal>
@@ -437,7 +381,7 @@ export default function Home() {
           <div className="footer-top">
             <div>
               <a className="brand" href="#">
-                Verdana<span className="brand-dot">.</span>
+                <BrandLogo />
               </a>
               <p>Affärssystem med riktning.</p>
             </div>
@@ -455,7 +399,7 @@ export default function Home() {
           </div>
           <div className="footer-bottom">
             <span>© {new Date().getFullYear()} Verdana</span>
-            <span>Designförslag 01 · Original­logotyp inväntas</span>
+            <span>Designförslag 02 · För granskning</span>
             <span>
               SVERIGE <CircleDot size={11} />
             </span>

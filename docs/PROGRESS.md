@@ -8,15 +8,16 @@ M0 — homepage design preview. Visual approval pending.
 - Initialized Next.js, TypeScript, Tailwind CSS, local Manrope font, Motion and Lucide.
 - Created Swedish homepage: responsive navigation, hero, benefits, services, ecosystem concept, process, about teaser, contact concept and footer.
 - Added project continuity files. Original master brief retained.
+- Received and preserved the official logo; integrated it in header, hero, footer and favicon. Removed the temporary text brand and hero concept artwork.
 
 ## Current task
 Homepage design preview verified and ready for user review. Local development server: http://127.0.0.1:3000.
 
 ## Next immediate action
-Present the local preview and request visual direction approval. Obtain the missing original logo. Do not expand beyond M0 until approval.
+Present the updated original-logo preview and await visual direction approval. Do not expand beyond M0 until approval.
 
 ## Decisions and blockers
-- User approval and official logo are pending.
+- Overall visual approval is pending. Supplying the logo does not approve the design or full build.
 - Company contact route is unconfirmed; no booking, email or form submission is connected.
 - No remote push or deployment is authorized for this checkpoint.
 

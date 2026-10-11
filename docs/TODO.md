@@ -4,7 +4,7 @@
 | --- | --- | --- |
 | DONE | Initial homepage implementation | All M0 sections present with Swedish copy |
 | DONE | M0 validation | Build, lint, typecheck and desktop/mobile browser pass |
-| BLOCKED | Original branding | Owner supplies logo; original artwork used correctly |
+| DONE | Original branding | Owner supplied original PNG; integrated without redrawing |
 | BLOCKED | Design approval | Robin explicitly approves direction or requests revisions |
 | NOT STARTED | M1 research and strategy | Verified competitor sources and approved site structure after approval |
 | NOT STARTED | M2 complete pages | Service, company, industry and insights pages with confirmed content |

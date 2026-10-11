@@ -24,3 +24,11 @@ Date: 2026-10-11. Scope: M0 homepage preview only.
 - Screenshots are stored in the parent workspace outputs directory. The local server is intentionally left running for the requested design review.
 
 Initial dependency audit: five high findings in the development-only eslint-config-next -> fast-glob -> micromatch -> braces chain (GHSA-vfj7-8cjw-p6xm). npm proposes a major downgrade; not applied. Reassess at production hardening. This is not a completed security audit.
+
+## Original logo update — 2026-10-11
+- Missing-logo limitation above is resolved. The supplied PNG is preserved unchanged with its SHA-256 recorded in public/brand/README.md.
+- Production build including TypeScript and ESLint passed after integration. git diff --check passed.
+- Edge/Playwright: no horizontal overflow at 320, 375, 768 and 1440 pixels. Desktop, mobile and footer logo placement visually inspected.
+- Header and hero images load correctly. Footer image is lazy-loaded and was verified after scrolling into view and waiting for image decode. All three placements loaded successfully.
+- Mobile navigation still opens and closes. No browser console or page errors during these checks.
+- Updated full-page and hero screenshots are in the workspace outputs directory. Overall design approval remains pending.

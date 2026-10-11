@@ -8,7 +8,7 @@ Read docs/PROGRESS.md, docs/TODO.md and docs/DECISIONS.md, then inspect Git stat
 ## Scope and approvals
 - Current phase is M0: local homepage design preview only. Await Robin's visual approval before research, additional pages, backend or complex interactions.
 - Explicit production approval is required before public launch. Do not purchase services or modify DNS without authorization.
-- Official logo is missing from the initially empty repository. Plain company-name text is a temporary label, not a new brand identity. Obtain original files before brand approval.
+- Official logo supplied by Robin is preserved unchanged in public/brand/verdana-original.png. Use the original artwork; do not redraw or generate a replacement. CSS may frame empty margins without clipping the emblem or wordmark.
 - Never invent partner status, references, certifications, prices or company history.
 - Swedish interface; English code, filenames, technical docs and commits.
 
