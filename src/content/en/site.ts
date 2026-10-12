@@ -2,7 +2,7 @@ import type { SiteCopy } from "@/content/types";
 
 export const site: SiteCopy = {
   skipToContent: "Skip to content",
-  homeLabel: "Verdana, home",
+  homeLabel: "Vardena, home",
   primaryNav: "Main menu",
   nav: { services: "Services", businessCentral: "Business Central", insights: "Insights", about: "About" },
   cta: "Start a conversation",
@@ -52,6 +52,11 @@ export const site: SiteCopy = {
       "You get a concrete proposal for the next step.",
     ],
   },
+  contactPrompt: {
+    faq: { text: "Can't find the answer?", link: "Ask us a question" },
+    talk: { text: "Would you rather talk it through with a consultant?", link: "Start a conversation" },
+    legal: { text: "Questions about this page?", link: "Contact us" },
+  },
   footer: {
     tagline:
       "A Microsoft Dynamics 365 Business Central consultancy in Sweden. We help companies choose, implement and improve their ERP system.",
@@ -88,10 +93,11 @@ export const site: SiteCopy = {
       "Microsoft, Dynamics 365, Business Central, Dynamics NAV, Microsoft 365, Power BI and Power Platform are trademarks of the Microsoft group of companies.",
   },
   notFound: {
-    metaTitle: "Page not found | Verdana",
+    metaTitle: "Page not found | Vardena",
     title: "This page doesn't exist.",
     text: "The address may be mistyped, or the page has moved. Start from the home page or go straight to our services.",
     home: "Go to the home page",
     services: "See our services",
+    contact: "Contact us",
   },
 };

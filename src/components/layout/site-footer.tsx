@@ -64,7 +64,12 @@ export function SiteFooter({ locale }: { locale: Locale }) {
             <BrandMark className="h-7" />
           </Link>
           <p className="mt-5 text-[0.95rem] leading-relaxed text-fg-muted">{t.tagline}</p>
-          <p className="mt-5 text-[0.8rem] font-[560] tracking-wide text-fg-subtle">{t.region}</p>
+          <p className="mt-5">
+            <a href={`mailto:${company.email}`} className="link-quiet text-[0.95rem] font-[560] text-fg hover:text-fg">
+              {company.email}
+            </a>
+          </p>
+          <p className="mt-4 text-[0.8rem] font-[560] tracking-wide text-fg-subtle">{t.region}</p>
           <div className="mt-3">
             <FooterLanguages label={t.languages} />
           </div>
@@ -90,7 +95,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
         <div className="mt-16 flex flex-col gap-4 border-t border-hairline pt-7 text-[0.8rem] leading-relaxed text-fg-subtle md:flex-row md:justify-between md:gap-12">
           <div className="shrink-0 space-y-1">
             <p>
-              © {new Date().getFullYear()} Verdana. {t.rights}
+              © {new Date().getFullYear()} Vardena. {t.rights}
             </p>
             <p>
               {t.orgNumber} {company.orgNumber}

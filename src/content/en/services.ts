@@ -9,7 +9,7 @@ export const services: Record<ServiceId, Service> = {
     name: "ERP advisory",
     blurb: "Make the right choice before you invest in a new ERP system.",
     menu: "Pre-study and the right system",
-    metaTitle: "ERP Readiness Assessment & Advisory | Verdana",
+    metaTitle: "ERP Readiness Assessment & Advisory | Vardena",
     metaDescription:
       "A structured assessment before you commit to Business Central: requirements, fit-gap analysis, budget range and a recommended roadmap with next steps.",
     serviceType: "ERP advisory and readiness assessment",
@@ -90,7 +90,7 @@ export const services: Record<ServiceId, Service> = {
     name: "Implementation",
     blurb: "Business Central implemented with a clear plan, budget and ownership.",
     menu: "From plan to go-live",
-    metaTitle: "Business Central Implementation in Sweden | Verdana",
+    metaTitle: "Business Central Implementation in Sweden | Vardena",
     metaDescription:
       "Business Central implementation for Swedish and international companies: scope, configuration, data migration, integrations, training and go-live.",
     serviceType: "Microsoft Dynamics 365 Business Central implementation",
@@ -188,7 +188,7 @@ export const services: Record<ServiceId, Service> = {
     name: "Migration from Dynamics NAV",
     blurb: "From Navision or NAV to Business Central in the cloud.",
     menu: "Upgrade from NAV or Navision",
-    metaTitle: "NAV to Business Central Upgrade & Migration | Verdana",
+    metaTitle: "NAV to Business Central Upgrade & Migration | Vardena",
     metaDescription:
       "Move from Dynamics NAV (Navision) to Business Central online: upgrade or reimplementation, data migration and customizations rebuilt as AL extensions.",
     serviceType: "Migration from Microsoft Dynamics NAV to Business Central",
@@ -280,7 +280,7 @@ export const services: Record<ServiceId, Service> = {
     name: "Integrations and development",
     blurb: "Connect your webshop, bank, logistics and Microsoft 365.",
     menu: "Connect webshop, bank and logistics",
-    metaTitle: "Business Central Integrations & AL Development | Verdana",
+    metaTitle: "Business Central Integrations & AL Development | Vardena",
     metaDescription:
       "Connect Business Central to your webshop, bank, logistics, Microsoft 365 and Power BI, with AL extensions built to keep working through Microsoft updates.",
     serviceType: "Integrations and development for Microsoft Dynamics 365 Business Central",
@@ -364,7 +364,7 @@ export const services: Record<ServiceId, Service> = {
     name: "Support and optimization",
     blurb: "Quick help day to day and a system that keeps improving.",
     menu: "Day-to-day help and improvements",
-    metaTitle: "Business Central Support & Optimization | Verdana",
+    metaTitle: "Business Central Support & Optimization | Vardena",
     metaDescription:
       "Business Central support when something breaks and optimization as your business changes: troubleshooting, fixes, improvements and update planning.",
     serviceType: "Support and optimization for Microsoft Dynamics 365 Business Central",
@@ -443,7 +443,7 @@ export const services: Record<ServiceId, Service> = {
     name: "Application management",
     blurb: "Updates, changes and ownership in one place.",
     menu: "Updates, changes and ownership",
-    metaTitle: "Business Central Managed Services (AMS) | Verdana",
+    metaTitle: "Business Central Managed Services (AMS) | Vardena",
     metaDescription:
       "Application management for Business Central: major update testing, change management, users and permissions, documentation and integration monitoring.",
     serviceType: "Application management for Microsoft Dynamics 365 Business Central",
@@ -519,7 +519,7 @@ export const services: Record<ServiceId, Service> = {
     name: "Consultants",
     blurb: "Business Central expertise that strengthens your team.",
     menu: "Expertise that joins your team",
-    metaTitle: "Hire Business Central Consultants in Sweden | Verdana",
+    metaTitle: "Hire Business Central Consultants in Sweden | Vardena",
     metaDescription:
       "Business Central consultants who join your team: project management, solution design, finance and logistics, AL development and ERP requirements.",
     serviceType: "Microsoft Dynamics 365 Business Central consulting",

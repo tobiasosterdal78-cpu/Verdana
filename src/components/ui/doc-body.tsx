@@ -9,12 +9,18 @@ export function DocBody({
   sourcesLabel,
   faqs,
   faqTitle,
+  rail,
+  closing,
 }: {
   doc: Doc;
   contentsLabel: string;
   sourcesLabel: string;
   faqs?: Faq[];
   faqTitle?: string;
+  /** Stays in view under the contents list on wide screens. */
+  rail?: React.ReactNode;
+  /** Last thing in the text column, after the FAQs and before the sources. */
+  closing?: React.ReactNode;
 }) {
   const headings = doc.body.filter(
     (block): block is Extract<Doc["body"][number], { type: "h2" }> => block.type === "h2" && Boolean(block.id),
@@ -23,27 +29,30 @@ export function DocBody({
   return (
     <section className="bg-canvas">
       <div className="wrap section-pad grid gap-12 lg:grid-cols-4 lg:gap-12">
-        {headings.length > 2 ? (
-          <nav aria-label={contentsLabel} className="hidden lg:block">
-            <div className="sticky top-28">
-              <p className="text-[0.8rem] font-semibold tracking-wide text-fg">{contentsLabel}</p>
-              <ol className="mt-4 space-y-2.5 border-l border-hairline">
-                {headings.map((heading) => (
-                  <li key={heading.id}>
-                    <a
-                      href={`#${heading.id}`}
-                      className="-ml-px block border-l border-transparent pl-4 text-[0.9rem] leading-snug text-fg-subtle transition-colors hover:border-accent hover:text-fg"
-                    >
-                      {heading.text}
-                    </a>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </nav>
-        ) : (
-          <div className="hidden lg:block" />
-        )}
+        <div className="hidden lg:block">
+          <div className="sticky top-28">
+            {headings.length > 2 ? (
+              <nav aria-label={contentsLabel}>
+                <p className="text-[0.8rem] font-semibold tracking-wide text-fg">{contentsLabel}</p>
+                <ol className="mt-4 space-y-2.5 border-l border-hairline">
+                  {headings.map((heading) => (
+                    <li key={heading.id}>
+                      <a
+                        href={`#${heading.id}`}
+                        className="-ml-px block border-l border-transparent pl-4 text-[0.9rem] leading-snug text-fg-subtle transition-colors hover:border-accent hover:text-fg"
+                      >
+                        {heading.text}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </nav>
+            ) : null}
+            {rail ? (
+              <div className={headings.length > 2 ? "mt-8 border-t border-hairline pt-6" : undefined}>{rail}</div>
+            ) : null}
+          </div>
+        </div>
         <div className="min-w-0 lg:col-span-3 lg:max-w-[46rem]">
           <RichText blocks={doc.body} />
           {faqs && faqs.length > 0 ? (
@@ -52,6 +61,7 @@ export function DocBody({
               <FaqList faqs={faqs} />
             </div>
           ) : null}
+          {closing ? <div className="mt-12">{closing}</div> : null}
           {doc.sources && doc.sources.length > 0 ? (
             <div className="mt-16 border-t border-hairline pt-8">
               <h2 className="text-[0.85rem] font-semibold tracking-wide text-fg">{sourcesLabel}</h2>

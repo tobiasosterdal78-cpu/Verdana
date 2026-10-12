@@ -106,6 +106,19 @@ export type IconItem = { icon: IconName; title: string; text: string };
 
 export type SectionHead = { label: string; title: string; lead: string };
 
+/** One capability area on the home page: a short name, a claim, and what it rests on. */
+export type AreaCopy = {
+  name: string;
+  title: string;
+  text: string;
+  points: string[];
+  /** What is standard and what takes an add-on, a licence or an integration. */
+  scope?: string;
+  link: string;
+  /** Describes the illustration beside the text; the illustration itself is hidden from screen readers. */
+  caption: string;
+};
+
 export type HomeCopy = {
   metaTitle: string;
   metaDescription: string;
@@ -127,7 +140,72 @@ export type HomeCopy = {
     oneMonth: string;
     /** "{n}" is replaced with the number of months. */
     months: string;
-    today: string;
+  };
+  /**
+   * The five areas the home page goes into. Every figure in a mock is
+   * example data; only labels and display values live here, the geometry
+   * is in components/home/area-mocks.tsx.
+   */
+  areas: SectionHead & {
+    projects: AreaCopy & {
+      mock: {
+        window: string;
+        status: string;
+        project: string;
+        totals: { label: string; value: string }[];
+        activities: string;
+        budget: string;
+        actual: string;
+        rows: { label: string; value: string }[];
+        week: string;
+        approved: string;
+        days: string[];
+        hours: string[];
+        sum: string;
+        total: string;
+      };
+    };
+    warehouse: AreaCopy & {
+      mock: {
+        window: string;
+        location: string;
+        legend: { occupied: string; free: string; stop: string };
+        pick: string;
+        columns: [string, string, string];
+        lines: { number: string; item: string; bin: string; quantity: string }[];
+        picked: string;
+        next: string;
+        stock: { label: string; value: string; reorder: string };
+      };
+    };
+    commerce: Omit<AreaCopy, "caption">;
+    reporting: AreaCopy & {
+      mock: {
+        sales: {
+          title: string;
+          period: string;
+          kpis: { label: string; value: string; change: string }[];
+          trend: string;
+          thisYear: string;
+          lastYear: string;
+          groupsTitle: string;
+          groups: { label: string; value: string }[];
+        };
+        projects: { title: string; subtitle: string; rows: { label: string; value: string }[] };
+        receivables: { title: string; total: string; buckets: { label: string; value: string }[] };
+      };
+    };
+    care: AreaCopy & {
+      secondLink: string;
+      mock: {
+        window: string;
+        tickets: { title: string; area: string; status: string }[];
+        updates: string;
+        major: string;
+        minor: string;
+        checks: string[];
+      };
+    };
   };
   businessCentral: Omit<SectionHead, "lead"> & {
     paragraphs: string[];
@@ -157,6 +235,10 @@ export type ContactFormCopy = {
   interests: string[];
   errors: Record<ContactField, string>;
   status: { invalid: string; unavailable: string; failed: string };
+  /** Offered when the form could not send: opens the visitor's own mail program with the message. */
+  mailFallback: string;
+  /** Subject of the email an enquiry becomes. */
+  emailSubject: string;
   submit: string;
   sending: string;
   sent: { title: string; text: string };
@@ -198,6 +280,8 @@ export type PagesCopy = {
     title: string;
     lead: string;
     expectations: { title: string; items: IconItem[] };
+    /** The email address as a second way in, beside the form. */
+    direct: { title: string; text: string };
     form: ContactFormCopy;
   };
   insights: { read: string; latest: string };
@@ -231,6 +315,8 @@ export type SiteCopy = {
   sources: string;
   minutes: string;
   ctaBand: { title: string; text: string; primary: string; secondary: string; steps: string[] };
+  /** Short prompts inside a page that lead to the contact page. */
+  contactPrompt: Record<"faq" | "talk" | "legal", { text: string; link: string }>;
   footer: {
     tagline: string;
     region: string;
@@ -258,5 +344,5 @@ export type SiteCopy = {
     orgNumber: string;
     trademarks: string;
   };
-  notFound: { metaTitle: string; title: string; text: string; home: string; services: string };
+  notFound: { metaTitle: string; title: string; text: string; home: string; services: string; contact: string };
 };

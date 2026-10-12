@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ *
- * Verdana design system
+ * Vardena design system
  *
  * Light by default: white and snow sections, rounded cards with fine
  * borders, midnight-navy bands (.tone-night) for emphasis, and signal blue
@@ -281,7 +281,7 @@ html.theme-switching *::after {
 }
 
 /* ── Brand artwork ──────────────────────────────────────────────────── */
-/* The owner's PNGs are used unchanged. A frame clips only the fully
+/* The owner's PNG is used unchanged. A frame clips only the fully
    transparent margin around the artwork; the image inside keeps its own
    proportions. --fx/--fy/--fw/--fh: frame in source pixels; --sw: source
    width. */
@@ -301,24 +301,15 @@ html.theme-switching *::after {
   top: calc(var(--fy) / var(--fh) * -100%);
 }
 
-/* The giant footer word: the owner's wordmark as a mask, tinted by theme.
-   The frame is x 30..2138, y 204..498 of the 2175 x 723 source. Mask
-   position percentages align points of image and box, so the offsets
-   are 30 / (2175 - 2108) and 204 / (723 - 294) of the overflow. */
+/* The giant footer word: the name in the site's type, stretched by the SVG
+   to the full width (textLength). The viewBox is as tall as the capitals
+   at this size, so the word stands on the bottom edge. */
 .brand-wordmark {
   display: block;
-  aspect-ratio: 2108 / 294;
-  /* Ink that runs out toward the bottom of the page, so the word sinks
-     into the canvas instead of sitting on it as a flat block. */
-  background: linear-gradient(
-    to bottom,
-    color-mix(in srgb, var(--fg) 10%, transparent),
-    color-mix(in srgb, var(--fg) 2%, transparent) 85%
-  );
-  -webkit-mask: url("/brand/verdana-wordmark.png") 44.776% 47.552% / calc(2175 / 2108 * 100%)
-    auto no-repeat;
-  mask: url("/brand/verdana-wordmark.png") 44.776% 47.552% / calc(2175 / 2108 * 100%) auto
-    no-repeat;
+  overflow: visible;
+  font-size: 208px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 /* ── Header ─────────────────────────────────────────────────────────── */
@@ -894,8 +885,32 @@ html::-webkit-scrollbar-thumb:active {
   }
 }
 
+/* ── Area illustrations ─────────────────────────────────────────────── */
+/* Bars grow from their left edge as the illustration scrolls into view,
+   where the browser has scroll-driven animations; elsewhere, and with
+   reduced motion, they simply stand at full length. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .grow-x {
+      transform-origin: left center;
+      animation: grow-x linear both;
+      animation-timeline: view();
+      animation-range: entry 15% cover 32%;
+    }
+  }
+}
+
+@keyframes grow-x {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
 /* ── Long-form content ──────────────────────────────────────────────── */
-.prose-verdana {
+.prose-vardena {
   max-width: 44rem;
   color: var(--fg-muted);
   font-size: 1.125rem;

@@ -1,7 +1,7 @@
 import type { BusinessCentralPage } from "@/content/types";
 
 export const businessCentral: BusinessCentralPage = {
-  metaTitle: "What Is Microsoft Dynamics 365 Business Central? | Verdana",
+  metaTitle: "What Is Microsoft Dynamics 365 Business Central? | Vardena",
   metaDescription:
     "What Business Central covers, what it costs in Sweden, Essentials vs Premium, cloud vs on-premises, Swedish localization and the path from Dynamics NAV.",
   title: "Microsoft Dynamics 365 Business Central, explained",

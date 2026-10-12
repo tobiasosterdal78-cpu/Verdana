@@ -2,7 +2,7 @@ import type { Article, InsightsIndex } from "@/content/types";
 import type { InsightId } from "@/lib/routes";
 
 export const insightsIndex: InsightsIndex = {
-  metaTitle: "Insikter om Business Central och affärssystem | Verdana",
+  metaTitle: "Insikter om Business Central och affärssystem | Vardena",
   metaDescription:
     "Guider om Business Central och affärssystem: priser och licenser, migrering från Dynamics NAV (Navision), när NAV-supporten upphör och att byta system.",
   title: "Insikter om Business Central och affärssystem",
@@ -285,7 +285,7 @@ export const articles: Record<InsightId, Article> = {
   navEndOfLife: {
     id: "navEndOfLife",
     category: "Livscykel",
-    metaTitle: "Navision end of life: när upphör NAV-supporten? | Verdana",
+    metaTitle: "Navision end of life: när upphör NAV-supporten? | Vardena",
     metaDescription:
       "NAV 2016:s utökade support upphörde i april 2026. NAV 2017 når slutdatum 11 januari 2027 och NAV 2018 11 januari 2028. Så planerar ni nästa steg.",
     title: "Navision end of life: vad gäller för NAV 2016, 2017 och 2018?",
@@ -470,7 +470,7 @@ export const articles: Record<InsightId, Article> = {
   pricing: {
     id: "pricing",
     category: "Priser",
-    metaTitle: "Vad kostar Business Central? Pris och licenser | Verdana",
+    metaTitle: "Vad kostar Business Central? Pris och licenser | Vardena",
     metaDescription:
       "Vad kostar Business Central per användare och månad – och vad tillkommer för implementering, anpassningar och support? Så räknar ni på totalkostnaden.",
     title: "Vad kostar Business Central? Så räknar ni på licenser och totalkostnad",
@@ -671,7 +671,7 @@ export const articles: Record<InsightId, Article> = {
   switchingErp: {
     id: "switchingErp",
     category: "Guide",
-    metaTitle: "Byta affärssystem – det här ska ni tänka på | Verdana",
+    metaTitle: "Byta affärssystem – det här ska ni tänka på | Vardena",
     metaDescription:
       "Funderar ni på att byta affärssystem? Här är tecknen på att det är dags, vad ni ska tänka på i valet och hur ni undviker de vanligaste fallgroparna.",
     title: "Byta affärssystem – det här ska ni tänka på",

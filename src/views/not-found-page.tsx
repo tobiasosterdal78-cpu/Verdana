@@ -26,6 +26,9 @@ export function NotFoundPage({ locale }: { locale: Locale }) {
           <Link href={href(locale, "services")} className="btn btn-ghost">
             {t.services}
           </Link>
+          <Link href={href(locale, "contact")} className="btn btn-ghost">
+            {t.contact}
+          </Link>
         </div>
       </div>
     </section>

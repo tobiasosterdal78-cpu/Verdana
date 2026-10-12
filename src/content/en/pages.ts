@@ -2,7 +2,7 @@ import type { PagesCopy } from "@/content/types";
 
 export const pages: PagesCopy = {
   services: {
-    metaTitle: "Business Central Consulting Services | Verdana",
+    metaTitle: "Business Central Consulting Services | Vardena",
     metaDescription:
       "ERP advisory, implementation, NAV to Business Central migration, integrations, support, managed services and consultants for Business Central.",
     title: "Business Central consulting services",
@@ -29,11 +29,11 @@ export const pages: PagesCopy = {
     related: "Related services",
   },
   about: {
-    metaTitle: "About Verdana | Business Central Consultancy, Sweden",
+    metaTitle: "About Vardena | Business Central Consultancy, Sweden",
     metaDescription:
-      "Verdana is a Swedish consultancy for Microsoft Dynamics 365 Business Central. Straight answers, standard before custom code, knowledge that stays with you.",
-    title: "About Verdana",
-    lead: "Verdana is a Swedish consultancy focused on Microsoft Dynamics 365 Business Central. We help companies choose, implement and develop their ERP system, with the people who use it at the center.",
+      "Vardena is a Swedish consultancy for Microsoft Dynamics 365 Business Central. Straight answers, standard before custom code, knowledge that stays with you.",
+    title: "About Vardena",
+    lead: "Vardena is a Swedish consultancy focused on Microsoft Dynamics 365 Business Central. We help companies choose, implement and develop their ERP system, with the people who use it at the center.",
     why: {
       title: "Why we exist",
       paragraphs: [
@@ -69,10 +69,10 @@ export const pages: PagesCopy = {
     servicesCta: "See our services",
   },
   contact: {
-    metaTitle: "Contact Verdana | Business Central Consultancy, Sweden",
+    metaTitle: "Contact Vardena | Business Central Consultancy, Sweden",
     metaDescription:
       "Book a first conversation about Business Central, replacing your ERP or moving from Dynamics NAV. Tell us about your situation and we will get back to you.",
-    title: "Contact Verdana",
+    title: "Contact Vardena",
     lead: "Tell us briefly about your business and what you are considering: a new ERP system, a move from Dynamics NAV or getting more out of Business Central.",
     expectations: {
       title: "What a first conversation looks like",
@@ -94,6 +94,10 @@ export const pages: PagesCopy = {
         },
       ],
     },
+    direct: {
+      title: "Prefer email?",
+      text: "Write to us directly. The form and the email end up in the same place.",
+    },
     form: {
       labels: {
         name: "Name",
@@ -106,7 +110,7 @@ export const pages: PagesCopy = {
       optional: "optional",
       choose: "Choose an option",
       messagePlaceholder: "For example: we run NAV 2016 and want to understand what a move to Business Central involves.",
-      consent: "I agree that Verdana stores my details to answer this enquiry.",
+      consent: "I agree that Vardena stores my details to answer this enquiry.",
       interests: [
         "New ERP system or assessment",
         "Business Central implementation",
@@ -128,9 +132,11 @@ export const pages: PagesCopy = {
       },
       status: {
         invalid: "Some details are missing or need correcting. See the marked fields.",
-        unavailable: "The form is not connected yet, so nothing was sent. Your details are still in the fields.",
-        failed: "The enquiry could not be sent right now. Please try again in a moment.",
+        unavailable: "The form could not send your enquiry. Your details are still in the fields, and you can send the same message by email instead.",
+        failed: "The enquiry could not be sent right now. Please try again in a moment, or send the same message by email.",
       },
+      mailFallback: "Send by email instead",
+      emailSubject: "Enquiry via vardena.se",
       submit: "Send enquiry",
       sending: "Sending …",
       sent: {

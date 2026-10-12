@@ -2,7 +2,7 @@ import type { Article, InsightsIndex } from "@/content/types";
 import type { InsightId } from "@/lib/routes";
 
 export const insightsIndex: InsightsIndex = {
-  metaTitle: "Business Central Insights & Guides | Verdana",
+  metaTitle: "Business Central Insights & Guides | Vardena",
   metaDescription:
     "Practical guides to Business Central in Sweden: Dynamics NAV end of life, upgrading from NAV, pricing in SEK and how to plan a switch of ERP system.",
   title: "Business Central insights",
@@ -78,7 +78,7 @@ export const articles: Record<InsightId, Article> = {
   navToBusinessCentral: {
     id: "navToBusinessCentral",
     category: "Guide",
-    metaTitle: "How to Migrate from NAV to Business Central | Verdana",
+    metaTitle: "How to Migrate from NAV to Business Central | Vardena",
     metaDescription:
       "How to move from Dynamics NAV (Navision) to Business Central: upgrade vs reimplementation, data migration, customizations, licenses and typical risks.",
     title: "How to move from Dynamics NAV to Business Central",
@@ -285,7 +285,7 @@ export const articles: Record<InsightId, Article> = {
   navEndOfLife: {
     id: "navEndOfLife",
     category: "Lifecycle",
-    metaTitle: "Dynamics NAV End of Life: Support Dates & Options | Verdana",
+    metaTitle: "Dynamics NAV End of Life: Support Dates & Options | Vardena",
     metaDescription:
       "NAV 2017 extended support ends January 11, 2027, and NAV 2018 on January 11, 2028. What end of support means and how to move to Business Central.",
     title: "Dynamics NAV end of life: support dates and what to do next",
@@ -470,7 +470,7 @@ export const articles: Record<InsightId, Article> = {
   pricing: {
     id: "pricing",
     category: "Pricing",
-    metaTitle: "Business Central Pricing in Sweden (2026) | Verdana",
+    metaTitle: "Business Central Pricing in Sweden (2026) | Vardena",
     metaDescription:
       "Microsoft list prices in Sweden (Oct 2026): Essentials SEK 764.70 and Premium SEK 1,051.40 per user/month ex. VAT, plus what drives your total cost.",
     title: "Business Central pricing in Sweden: licenses and total cost",
@@ -671,7 +671,7 @@ export const articles: Record<InsightId, Article> = {
   switchingErp: {
     id: "switchingErp",
     category: "Guide",
-    metaTitle: "Switching ERP Systems: A Guide to ERP Selection | Verdana",
+    metaTitle: "Switching ERP Systems: A Guide to ERP Selection | Vardena",
     metaDescription:
       "Signs you have outgrown your ERP or accounting system, how to evaluate a replacement, run a pre-study, choose a partner and plan the data migration.",
     title: "Switching ERP systems: the signs, the evaluation and the plan",

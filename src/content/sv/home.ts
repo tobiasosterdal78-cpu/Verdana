@@ -1,7 +1,7 @@
 import type { HomeCopy } from "@/content/types";
 
 export const home: HomeCopy = {
-  metaTitle: "Business Central-konsulter i Sverige | Verdana",
+  metaTitle: "Business Central-konsulter i Sverige | Vardena",
   metaDescription:
     "Business Central-konsulter för svenska företag: rådgivning, implementering, migrering från Navision, integrationer, support och förvaltning.",
   hero: {
@@ -22,7 +22,7 @@ export const home: HomeCopy = {
   nav: {
     label: "Dynamics NAV",
     title: "Kör ni fortfarande Dynamics NAV?",
-    lead: "Microsofts förlängda support för de sista NAV-versionerna löper ut. Utan säkerhetsuppdateringar växer risken för varje månad, och en flytt till Business Central behöver planeras i god tid.",
+    lead: "Microsofts förlängda support för de sista NAV-versionerna löper ut. En flytt till Business Central behöver planeras i god tid.",
     source:
       "Källa: Microsofts livscykelsidor för Dynamics NAV. Datumet är sista dagen med förlängd support, då Microsoft slutar leverera säkerhetsuppdateringar.",
     primary: "Planera flytten",
@@ -32,7 +32,6 @@ export const home: HomeCopy = {
     thisMonth: "Upphör denna månad",
     oneMonth: "Om 1 månad",
     months: "Om {n} månader",
-    today: "I dag",
   },
   businessCentral: {
     label: "Business Central",
@@ -65,6 +64,167 @@ export const home: HomeCopy = {
       ],
     },
   },
+  areas: {
+    label: "Områden",
+    title: "Där Business Central märks i vardagen.",
+    lead: "Fem områden där vi oftast gör störst skillnad: från rapporterad tid och lagerplatser till rapporter och ett system som sköts efter driftstart.",
+    projects: {
+      name: "Tid och projekt",
+      title: "Från rapporterad timme till faktura.",
+      text: "Projekt, resurser och tidrapporter ligger i samma system som ekonomin. Ni ser budget mot utfall medan projektet pågår, inte efter bokslutet.",
+      points: [
+        "Tidrapporter med attest, per projekt och aktivitet",
+        "Budget, utfall och pågående arbeten per projekt",
+        "Fakturering löpande eller till fast pris, direkt från projektet",
+      ],
+      scope: "Ingår i standard, redan i licensen Essentials.",
+      link: "Vad Business Central täcker",
+      caption: "Illustration med exempeldata: ett projekt med budget mot utfall per aktivitet och en attesterad tidrapport.",
+      mock: {
+        window: "Projekt",
+        status: "Pågår",
+        project: "P-1042 · Nytt kundcenter",
+        totals: [
+          { label: "Timmar", value: "312 h" },
+          { label: "Kostnad", value: "468 tkr" },
+          { label: "Fakturerat", value: "420 tkr" },
+        ],
+        activities: "Aktiviteter",
+        budget: "Budget",
+        actual: "Utfall",
+        rows: [
+          { label: "Förstudie", value: "96 %" },
+          { label: "Bygge", value: "81 %" },
+          { label: "Utbildning", value: "34 %" },
+        ],
+        week: "Tidrapport vecka 42",
+        approved: "Attesterad",
+        days: ["Mån", "Tis", "Ons", "Tors", "Fre"],
+        hours: ["8", "7,5", "8", "6", "4"],
+        sum: "Summa",
+        total: "33,5",
+      },
+    },
+    warehouse: {
+      name: "Lager",
+      title: "Rätt artikel på rätt plats, och ett saldo som stämmer.",
+      text: "Lagerställen, lagerplatser och plock styrs i samma system som order och inköp. Saldot ändras när varan rör sig, inte när någon hinner registrera.",
+      points: [
+        "Plock, inlagring och förflyttning per lagerplats",
+        "Batch- och serienummer med spårbarhet hela vägen",
+        "Inventering, beställningspunkter och inköpsförslag",
+      ],
+      scope: "Ingår i standard, redan i licensen Essentials. Handdatorer för streckkoder kräver oftast ett tillägg.",
+      link: "Vad Business Central täcker",
+      caption: "Illustration med exempeldata: lagerplatser med en plockrunda, plocklistan och saldot för en artikel.",
+      mock: {
+        window: "Lager",
+        location: "Huvudlager",
+        legend: { occupied: "Belagd", free: "Ledig", stop: "Plockstopp" },
+        pick: "Plock PL-0318",
+        columns: ["Artikel", "Lagerplats", "Antal"],
+        lines: [
+          { number: "10-204", item: "Hyllplan 90 cm", bin: "A-05", quantity: "4" },
+          { number: "10-311", item: "Konsol stål", bin: "B-06", quantity: "12" },
+          { number: "20-118", item: "Gavel 200 cm", bin: "C-03", quantity: "6" },
+        ],
+        picked: "Plockad",
+        next: "Nästa",
+        stock: { label: "Saldo 10-204", value: "148 st", reorder: "Beställningspunkt 60" },
+      },
+    },
+    commerce: {
+      name: "Logistik och e-handel",
+      title: "Från klick i webbshopen till levererat paket.",
+      text: "Order, lagersaldo, priser och frakt hänger ihop. Det som säljs i webbshopen finns i affärssystemet direkt, utan att någon skriver av en order.",
+      points: [
+        "Webborder blir säljorder automatiskt, med den inbyggda Shopify-kopplingen eller en integration mot er plattform",
+        "Lagersaldo och priser går tillbaka till webbshopen",
+        "Fraktsätt och spårningsnummer följer ordern hela vägen till kunden",
+      ],
+      scope: "Shopify-kopplingen ingår i Business Central online. Fraktbokning hos transportörer, tredjepartslager och andra e-handelsplattformar kopplas in med tillägg eller integration.",
+      link: "Om integrationer och utveckling",
+    },
+    reporting: {
+      name: "Rapportering med Power BI",
+      title: "Siffror att styra efter, inte bara stämma av.",
+      text: "Power BI läser samma data som affärssystemet. Vi utgår från Microsofts färdiga rapporter för Business Central och bygger vidare med de nyckeltal som är era.",
+      points: [
+        "Färdiga Power BI-rapporter för bland annat ekonomi, försäljning, inköp, lager och projekt",
+        "Rapporter inbäddade i Business Central, där besluten tas",
+        "Egna instrumentpaneler för ledning, sälj och lager på samma data",
+      ],
+      scope: "Microsofts rapporter kräver Business Central online och Power BI-licenser för dem som ska läsa dem.",
+      link: "Om integrationer och utveckling",
+      caption: "Illustration med exempeldata: instrumentpaneler för försäljning, projektlönsamhet och kundfordringar, så som de kan se ut i Power BI.",
+      mock: {
+        sales: {
+          title: "Försäljning",
+          period: "Senaste 12 månaderna",
+          kpis: [
+            { label: "Omsättning", value: "42,6 Mkr", change: "+8 %" },
+            { label: "Bruttomarginal", value: "31,4 %", change: "+1,2" },
+            { label: "Orderingång", value: "3,9 Mkr", change: "+5 %" },
+            { label: "Lagervärde", value: "6,1 Mkr", change: "−3 %" },
+          ],
+          trend: "Omsättning per månad",
+          thisYear: "I år",
+          lastYear: "Föregående år",
+          groupsTitle: "Per artikelgrupp",
+          groups: [
+            { label: "Inredning", value: "17,2" },
+            { label: "Belysning", value: "11,8" },
+            { label: "Tillbehör", value: "8,4" },
+            { label: "Service", value: "5,2" },
+          ],
+        },
+        projects: {
+          title: "Projektlönsamhet",
+          subtitle: "Täckningsgrad",
+          rows: [
+            { label: "P-1042", value: "34 %" },
+            { label: "P-1038", value: "27 %" },
+            { label: "P-1031", value: "12 %" },
+          ],
+        },
+        receivables: {
+          title: "Kundfordringar",
+          total: "4,8 Mkr",
+          buckets: [
+            { label: "Ej förfallet", value: "2,9" },
+            { label: "1–30 dagar", value: "1,1" },
+            { label: "31–60 dagar", value: "0,5" },
+            { label: "Över 60", value: "0,3" },
+          ],
+        },
+      },
+    },
+    care: {
+      name: "Förvaltning och support",
+      title: "Någon som håller i systemet efter driftstart.",
+      text: "Microsoft uppdaterar Business Central två gånger om året, och verksamheten ändras oftare än så. Vi tar hand om ärenden, uppdateringar och förbättringar så att systemet håller takt.",
+      points: [
+        "Support och felsökning hos konsulter som känner er lösning",
+        "Bevakning och test inför Microsofts större uppdateringar",
+        "Ändringshantering, behörigheter och dokumentation",
+      ],
+      link: "Support och optimering",
+      secondLink: "Förvaltning",
+      caption: "Illustration med exempeldata: en ärendelista och årets uppdateringar av Business Central, med större uppdateringar i april och oktober.",
+      mock: {
+        window: "Ärenden",
+        tickets: [
+          { title: "Momsrapporten visar fel period", area: "Ekonomi", status: "Löst" },
+          { title: "Ny användare till lagret", area: "Behörigheter", status: "Pågår" },
+          { title: "Rapport för orderstock", area: "Förbättring", status: "Planerad" },
+        ],
+        updates: "Microsofts uppdateringar",
+        major: "Större uppdatering",
+        minor: "Mindre uppdateringar varje månad",
+        checks: ["Testad i sandbox", "Tillägg kontrollerade", "Godkänd för drift"],
+      },
+    },
+  },
   integrations: {
     label: "Integrationer",
     title: "Business Central i ett större sammanhang.",
@@ -72,12 +232,9 @@ export const home: HomeCopy = {
     cta: "Om integrationer och utveckling",
     items: [
       { icon: "document", title: "Microsoft 365", text: "Arbeta med kunder, order och offerter direkt i Outlook, Excel och Teams." },
-      { icon: "report", title: "Power BI", text: "Rapporter och instrumentpaneler ovanpå samma data som affärssystemet." },
       { icon: "automation", title: "Power Automate och Power Apps", text: "Automatisera godkännanden och flöden, och bygg appar för fält och lager." },
       { icon: "copilot", title: "Copilot", text: "AI-stöd som är inbyggt i Business Central, för det som tar tid i vardagen." },
-      { icon: "ecommerce", title: "E-handel", text: "Order, artiklar, priser och lagersaldo synkade med webbshopen." },
       { icon: "bank", title: "Bank och betalningar", text: "Betalfiler, kontoutdrag och avstämning utan manuella moment." },
-      { icon: "logistics", title: "Logistik och frakt", text: "Fraktbokning, spårning och tredjepartslager i samma kedja." },
       { icon: "yourSystems", title: "Era övriga system", text: "Lön, CRM, BI eller branschsystem via standardiserade API:er." },
     ],
   },
@@ -113,7 +270,7 @@ export const home: HomeCopy = {
     label: "Principer",
     title: "Tre principer styr hur vi arbetar.",
     lead: "De gäller oavsett om vi föreslår, bygger eller förvaltar en lösning.",
-    cta: "Om Verdana",
+    cta: "Om Vardena",
     items: [
       {
         title: "Standard före specialkod",

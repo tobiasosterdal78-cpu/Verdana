@@ -1,7 +1,7 @@
 import type { BusinessCentralPage } from "@/content/types";
 
 export const businessCentral: BusinessCentralPage = {
-  metaTitle: "Business Central – affärssystemet från Microsoft | Verdana",
+  metaTitle: "Business Central – affärssystemet från Microsoft | Vardena",
   metaDescription:
     "Vad är Microsoft Dynamics 365 Business Central? Så fungerar affärssystemet för ekonomi, försäljning, inköp, lager och projekt – licenser, priser och NAV.",
   title: "Microsoft Dynamics 365 Business Central – affärssystemet för växande företag",

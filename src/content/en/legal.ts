@@ -5,17 +5,17 @@ const updated = "2026-10-11";
 
 export const legal: Record<LegalId, Doc> = {
   privacy: {
-    metaTitle: "Privacy notice | Verdana",
+    metaTitle: "Privacy notice | Vardena",
     metaDescription:
-      "How Verdana handles personal data from the contact form and server logs, why we process it, how long we keep it and how to use your rights under the GDPR.",
+      "How Vardena handles personal data from the contact form and server logs, why we process it, how long we keep it and how to use your rights under the GDPR.",
     title: "Privacy notice",
-    lead: "This notice explains what personal data Verdana handles when you visit this website or contact us, why we do it and what rights you have.",
+    lead: "This notice explains what personal data Vardena handles when you visit this website or contact us, why we do it and what rights you have.",
     updated,
     body: [
       { type: "h2", text: "Who is responsible", id: "controller" },
       {
         type: "p",
-        text: "Verdana is the controller for the personal data described in this notice. If you have questions about how we handle your data, or want to use any of your rights, reach us through the [contact page](/contact).",
+        text: "Vardena is the controller for the personal data described in this notice. If you have questions about how we handle your data, or want to use any of your rights, reach us through the [contact page](/contact).",
       },
       { type: "h2", text: "What data we collect and where it comes from", id: "data" },
       { type: "h3", text: "When you use the contact form" },
@@ -142,9 +142,9 @@ export const legal: Record<LegalId, Doc> = {
   },
 
   cookies: {
-    metaTitle: "Cookie Policy | Verdana",
+    metaTitle: "Cookie Policy | Vardena",
     metaDescription:
-      "The Verdana website sets no cookies and uses no analytics or tracking. The only thing stored in your browser is your light or dark theme choice.",
+      "The Vardena website sets no cookies and uses no analytics or tracking. The only thing stored in your browser is your light or dark theme choice.",
     title: "Cookies",
     lead: "This website sets no cookies. That is why you never see a cookie banner here.",
     updated,
@@ -204,9 +204,9 @@ export const legal: Record<LegalId, Doc> = {
   },
 
   terms: {
-    metaTitle: "Terms of use | Verdana",
+    metaTitle: "Terms of use | Vardena",
     metaDescription:
-      "The terms for using the Verdana website: general information only, Microsoft list prices with dates, links to other sites, copyright and liability.",
+      "The terms for using the Vardena website: general information only, Microsoft list prices with dates, links to other sites, copyright and liability.",
     title: "Terms of use",
     lead: "These terms apply when you use this website. By using the site, you accept them.",
     updated,
@@ -214,7 +214,7 @@ export const legal: Record<LegalId, Doc> = {
       { type: "h2", text: "About the website", id: "about" },
       {
         type: "p",
-        text: "This website is run by Verdana. It presents our services around Microsoft Dynamics 365 Business Central and lets you contact us. There are no user accounts and nothing can be bought on the site.",
+        text: "This website is run by Vardena. It presents our services around Microsoft Dynamics 365 Business Central and lets you contact us. There are no user accounts and nothing can be bought on the site.",
       },
       { type: "h2", text: "General information, not advice", id: "information" },
       {
@@ -234,7 +234,7 @@ export const legal: Record<LegalId, Doc> = {
       { type: "h2", text: "Intellectual property", id: "intellectual-property" },
       {
         type: "p",
-        text: "Texts, images and design on this site belong to Verdana unless stated otherwise. You are welcome to share links to the site and quote short passages with a reference to the source. Other use requires our written permission.",
+        text: "Texts, images and design on this site belong to Vardena unless stated otherwise. You are welcome to share links to the site and quote short passages with a reference to the source. Other use requires our written permission.",
       },
       {
         type: "p",
@@ -248,7 +248,7 @@ export const legal: Record<LegalId, Doc> = {
       { type: "h2", text: "Liability", id: "liability" },
       {
         type: "p",
-        text: "To the extent permitted by law, Verdana is not liable for any loss arising from the use of the information on this site, or from the site being temporarily unavailable.",
+        text: "To the extent permitted by law, Vardena is not liable for any loss arising from the use of the information on this site, or from the site being temporarily unavailable.",
       },
       { type: "h2", text: "Changes and governing law", id: "changes" },
       {
@@ -263,9 +263,9 @@ export const legal: Record<LegalId, Doc> = {
   },
 
   accessibility: {
-    metaTitle: "Accessibility statement | Verdana",
+    metaTitle: "Accessibility statement | Vardena",
     metaDescription:
-      "How accessible the Verdana website is: our WCAG 2.2 AA aim, what the site supports, how we have tested it, known limitations and how to report a problem.",
+      "How accessible the Vardena website is: our WCAG 2.2 AA aim, what the site supports, how we have tested it, known limitations and how to report a problem.",
     title: "Accessibility statement",
     lead: "We want everyone to be able to use this website, regardless of ability or the device they use. This statement describes where we stand.",
     updated,
@@ -321,9 +321,9 @@ export const legal: Record<LegalId, Doc> = {
   },
 
   security: {
-    metaTitle: "Responsible disclosure | Verdana",
+    metaTitle: "Responsible disclosure | Vardena",
     metaDescription:
-      "Found a security vulnerability in the Verdana website? Here is how to report it to us, what we ask of you in return and what you can expect from us.",
+      "Found a security vulnerability in the Vardena website? Here is how to report it to us, what we ask of you in return and what you can expect from us.",
     title: "Responsible disclosure",
     lead: "If you have found a security vulnerability in this website, we want to hear about it. Thank you for helping us keep the site safe.",
     updated,

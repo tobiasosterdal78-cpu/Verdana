@@ -7,6 +7,7 @@ import { getContent } from "@/content";
 import type { Locale } from "@/lib/i18n";
 import { href } from "@/lib/routes";
 import { breadcrumbNode, pageMetadata, webPageNode } from "@/lib/seo";
+import { company } from "@/lib/site";
 
 export function contactMetadata(locale: Locale): Metadata {
   const t = getContent(locale).pages.contact;
@@ -45,8 +46,19 @@ export function ContactPage({ locale }: { locale: Locale }) {
                 </li>
               ))}
             </ol>
+            <div className="mt-12 border-t border-hairline pt-8">
+              <h2 className="text-[1.15rem] font-semibold tracking-tight text-fg">{t.direct.title}</h2>
+              <p className="mt-1.5 max-w-sm text-[1rem] leading-relaxed text-fg-muted">{t.direct.text}</p>
+              <a
+                href={`mailto:${company.email}`}
+                className="mt-4 inline-flex items-center gap-2.5 text-[1.08rem] font-[560] text-accent-ink"
+              >
+                <Icon name="mail" size={20} />
+                <span className="link-quiet">{company.email}</span>
+              </a>
+            </div>
           </div>
-          <ContactForm locale={locale} t={t.form} />
+          <ContactForm locale={locale} t={t.form} email={company.email} />
         </div>
       </section>
 

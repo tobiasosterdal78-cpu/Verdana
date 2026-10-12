@@ -12,7 +12,7 @@ export function siteMetadata(locale: Locale): Metadata {
   const { home } = getContent(locale);
   return {
     metadataBase: new URL(site.origin),
-    title: { default: home.metaTitle, template: "%s | Verdana" },
+    title: { default: home.metaTitle, template: "%s | Vardena" },
     description: home.metaDescription,
     applicationName: site.name,
     robots: site.indexable

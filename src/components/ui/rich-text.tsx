@@ -33,10 +33,10 @@ export function Inline({ text }: { text: string }) {
   return <>{parts}</>;
 }
 
-/** Long-form content blocks inside .prose-verdana. */
+/** Long-form content blocks inside .prose-vardena. */
 export function RichText({ blocks }: { blocks: Block[] }) {
   return (
-    <div className="prose-verdana">
+    <div className="prose-vardena">
       {blocks.map((block, index) => {
         switch (block.type) {
           case "p":

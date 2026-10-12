@@ -34,12 +34,12 @@ Instrument Sans Variable, bundled locally. Headings weight 600 with tight tracki
 `wrap`: max width 80rem, side gutter clamp(1rem, 0.4rem + 2.6vw, 3rem). `section-pad`: clamp(4.5rem, 2.8rem + 6vw, 8.5rem) top and bottom. Cards 1.25rem radius, panels 1.75rem, buttons 0.75rem, with fine hairline borders.
 
 ## Components
-- Header: lockup, the Services and Business Central menus (click to open), Insights, About, theme switch, language switcher and contact button. Glass that turns translucent only once the page has scrolled under it; scroll progress bar on its bottom edge. The current page is marked by a short line under its navigation item and, in the Services menu, a blue tint on its icon.
-- Footer: the V, organisation number 559602-6616, language links (EN · SV) and the owner's wordmark drawn large and faint at the foot.
+- Header: the V beside the name in type, the Services and Business Central menus (click to open), Insights, About, theme switch, language switcher and contact button. Glass that turns translucent only once the page has scrolled under it; scroll progress bar on its bottom edge. The current page is marked by a short line under its navigation item and, in the Services menu, a blue tint on its icon.
+- Footer: the V, organisation number 559602-6616, language links (EN · SV) and the name drawn large and faint at the foot (SVG text fitted to the width).
 - Closing band (`CtaBand`): on wide screens the V, heading, text and two buttons hold the exact centre of the screen and the three steps (`StepTrail`) sit near the right edge. Each step lights up as the band scrolls into view. Two columns at 1024 px, stacked on mobile.
 - Spotlight: a wash of blue follows the mouse across cards, dark blue in light mode and light blue in dark mode, never for touch or pen.
 - Pin field: thin pins in midnight bands light up near the pointer and fade out; nothing at rest.
-- Home: NAV lifecycle timeline computed at build time, and an order moving through a connected Business Central setup (CSS animation).
+- Home: five numbered areas, each with a caption-ed illustration in a shared frame (`MockFrame`): a project with budget against actuals and a time sheet, a bin map with a pick list, the order flow (CSS animation), Power BI-style dashboards in a midnight band, and a ticket list with the year's update waves. Bars grow in with a view timeline (`.grow-x`) where the browser supports it; frames use `overflow: clip`, because `hidden` would capture that timeline. The NAV dates are a compact three-version notice computed at build time.
 
 ## Motion and accessibility
 CSS-only motion. Reduced motion stops the animations, the pin field, smooth scrolling and the scroll progress bar. Visible focus ring (`--accent-ink`), a skip link, and Escape closes menus. The theme and the reading position are restored before first paint, so neither flashes.

@@ -1,5 +1,6 @@
 "use server";
 
+import { deliver } from "@/components/contact/deliver";
 import { getContent } from "@/content";
 import type { ContactField } from "@/content/types";
 import { LOCALES, type Locale } from "@/lib/i18n";
@@ -47,23 +48,6 @@ export async function sendContact(_previous: ContactState, formData: FormData): 
 
   if (Object.keys(errors).length > 0) return { status: "invalid", errors, values };
 
-  const endpoint = process.env.CONTACT_WEBHOOK_URL;
-  if (!endpoint) return { status: "unavailable", values };
-
-  try {
-    const response = await fetch(endpoint, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        ...(process.env.CONTACT_WEBHOOK_TOKEN ? { authorization: `Bearer ${process.env.CONTACT_WEBHOOK_TOKEN}` } : {}),
-      },
-      body: JSON.stringify({ ...values, locale, source: "verdana-contact-form", receivedAt: new Date().toISOString() }),
-      signal: AbortSignal.timeout(10_000),
-    });
-    if (!response.ok) throw new Error(`Webhook responded ${response.status}`);
-    return { status: "sent" };
-  } catch (error) {
-    console.error("Contact delivery failed", error);
-    return { status: "failed", values };
-  }
+  const status = await deliver(values, locale, t);
+  return status === "sent" ? { status } : { status, values };
 }

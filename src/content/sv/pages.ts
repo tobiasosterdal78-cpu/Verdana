@@ -2,7 +2,7 @@ import type { PagesCopy } from "@/content/types";
 
 export const pages: PagesCopy = {
   services: {
-    metaTitle: "Tjänster inom Business Central | Verdana",
+    metaTitle: "Tjänster inom Business Central | Vardena",
     metaDescription:
       "Rådgivning, implementering, migrering från Navision, integrationer, support, förvaltning och konsultstöd för Microsoft Dynamics 365 Business Central.",
     title: "Tjänster inom Business Central",
@@ -29,11 +29,11 @@ export const pages: PagesCopy = {
     related: "Relaterade tjänster",
   },
   about: {
-    metaTitle: "Om Verdana – Business Central-konsulter | Verdana",
+    metaTitle: "Om Vardena – Business Central-konsulter | Vardena",
     metaDescription:
-      "Verdana är ett svenskt konsultbolag inom Microsoft Dynamics 365 Business Central. Raka besked, standard före specialkod och kunskap som stannar hos er.",
-    title: "Om Verdana",
-    lead: "Verdana är ett svenskt konsultbolag med fokus på Microsoft Dynamics 365 Business Central. Vi hjälper företag att välja, införa och utveckla sitt affärssystem, med människorna som använder det i centrum.",
+      "Vardena är ett svenskt konsultbolag inom Microsoft Dynamics 365 Business Central. Raka besked, standard före specialkod och kunskap som stannar hos er.",
+    title: "Om Vardena",
+    lead: "Vardena är ett svenskt konsultbolag med fokus på Microsoft Dynamics 365 Business Central. Vi hjälper företag att välja, införa och utveckla sitt affärssystem, med människorna som använder det i centrum.",
     why: {
       title: "Varför vi finns",
       paragraphs: [
@@ -69,10 +69,10 @@ export const pages: PagesCopy = {
     servicesCta: "Se våra tjänster",
   },
   contact: {
-    metaTitle: "Kontakta Verdana – boka ett samtal om Business Central",
+    metaTitle: "Kontakta Vardena – boka ett samtal om Business Central",
     metaDescription:
       "Boka ett första samtal om Business Central, byte av affärssystem eller migrering från Navision. Berätta om er situation så återkommer vi.",
-    title: "Kontakta Verdana",
+    title: "Kontakta Vardena",
     lead: "Berätta kort om er verksamhet och vad ni funderar på: nytt affärssystem, flytt från Dynamics NAV eller hur ni får ut mer av Business Central.",
     expectations: {
       title: "Så går ett första samtal till",
@@ -90,6 +90,10 @@ export const pages: PagesCopy = {
         },
       ],
     },
+    direct: {
+      title: "Hellre e-post?",
+      text: "Skriv direkt till oss. Formuläret och e-posten hamnar på samma ställe.",
+    },
     form: {
       labels: {
         name: "Namn",
@@ -102,7 +106,7 @@ export const pages: PagesCopy = {
       optional: "valfritt",
       choose: "Välj ett alternativ",
       messagePlaceholder: "Till exempel: vi kör NAV 2016 och vill förstå vad en flytt till Business Central innebär.",
-      consent: "Jag godkänner att Verdana sparar mina uppgifter för att kunna besvara förfrågan.",
+      consent: "Jag godkänner att Vardena sparar mina uppgifter för att kunna besvara förfrågan.",
       interests: [
         "Nytt affärssystem eller förstudie",
         "Implementering av Business Central",
@@ -124,9 +128,11 @@ export const pages: PagesCopy = {
       },
       status: {
         invalid: "Några uppgifter saknas eller behöver rättas. Se markerade fält.",
-        unavailable: "Formuläret är inte kopplat ännu, så inget har skickats. Uppgifterna finns kvar i fälten.",
-        failed: "Förfrågan kunde inte skickas just nu. Försök igen om en stund.",
+        unavailable: "Formuläret kunde inte skicka förfrågan. Uppgifterna finns kvar i fälten, och ni kan skicka samma meddelande med e-post i stället.",
+        failed: "Förfrågan kunde inte skickas just nu. Försök igen om en stund, eller skicka samma meddelande med e-post.",
       },
+      mailFallback: "Skicka med e-post i stället",
+      emailSubject: "Förfrågan via vardena.se",
       submit: "Skicka förfrågan",
       sending: "Skickar …",
       sent: {

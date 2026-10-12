@@ -20,10 +20,11 @@ function monthsBetween(from: Date, to: Date) {
   return (to.getFullYear() - from.getFullYear()) * 12 + (to.getMonth() - from.getMonth());
 }
 
-export function NavTimeline({ locale, t }: { locale: Locale; t: HomeCopy["nav"] }) {
+/** The last three versions and where their extended support stands today. */
+export function NavNotice({ locale, t }: { locale: Locale; t: HomeCopy["nav"] }) {
   const today = new Date();
   const format = new Intl.DateTimeFormat(DATE_LOCALE[locale], { month: "long", year: "numeric" });
-  const items = NAV_VERSIONS.map((item) => {
+  const items = NAV_VERSIONS.slice(-3).map((item) => {
     const end = new Date(`${item.end}T23:59:59`);
     const ended = end <= today;
     const months = monthsBetween(today, end);
@@ -36,45 +37,24 @@ export function NavTimeline({ locale, t }: { locale: Locale; t: HomeCopy["nav"] 
           : t.months.replace("{n}", String(months));
     return { ...item, label: format.format(end), ended, status };
   });
-  const endedCount = items.filter((item) => item.ended).length;
 
   return (
-    <div className="relative">
-      <ol className="overflow-hidden rounded-panel border border-hairline bg-surface sm:grid sm:grid-cols-5 sm:divide-x sm:divide-hairline">
-        {items.map((item) => (
-          <li
-            key={item.version}
-            className="spotlight flex items-center justify-between gap-4 border-b border-hairline px-5 py-4 last:border-b-0 sm:block sm:border-b-0 sm:p-7"
-          >
+    <ul className="grid gap-px overflow-hidden rounded-card border border-hairline bg-hairline sm:grid-cols-3">
+      {items.map((item) => (
+        <li key={item.version} className="flex items-baseline justify-between gap-4 bg-surface px-5 py-4 sm:block">
+          <span className="block text-[0.95rem] font-semibold tracking-tight text-fg">{item.version}</span>
+          <span className="block text-right sm:mt-2 sm:text-left">
             <span
-              aria-hidden="true"
-              className={`absolute inset-y-0 left-0 w-1 sm:inset-x-0 sm:bottom-auto sm:h-1 sm:w-auto ${
-                item.ended ? "bg-fg/15" : "bg-gradient-to-r from-accent to-glacier"
+              className={`block text-[0.95rem] font-semibold tabular-nums ${
+                item.ended ? "text-fg-subtle line-through decoration-1" : "text-accent-ink"
               }`}
-            />
-            <span className="block text-[1.02rem] font-semibold tracking-tight text-fg">{item.version}</span>
-            <span className="block text-right sm:mt-4 sm:text-left">
-              <span className="hidden text-[0.88rem] text-fg-subtle sm:block">{t.until}</span>
-              <span
-                className={`block font-semibold tabular-nums sm:mt-0.5 ${
-                  item.ended ? "text-fg-subtle line-through decoration-1" : "text-accent-ink"
-                }`}
-              >
-                {item.label}
-              </span>
-              <span className="mt-0.5 block text-[0.84rem] font-[560] text-fg-subtle sm:mt-3">{item.status}</span>
+            >
+              {item.label}
             </span>
-          </li>
-        ))}
-      </ol>
-      {endedCount > 0 && endedCount < items.length ? (
-        <span
-          className="pointer-events-none absolute -top-3 hidden -translate-x-1/2 sm:block"
-          style={{ left: `${(endedCount / items.length) * 100}%` }}
-        >
-          <span className="block rounded-full bg-fg px-2.5 py-1 text-[0.75rem] font-semibold text-canvas shadow-lg">{t.today}</span>
-        </span>
-      ) : null}
-    </div>
+            <span className="block text-[0.8rem] font-[560] text-fg-subtle">{item.status}</span>
+          </span>
+        </li>
+      ))}
+    </ul>
   );
 }

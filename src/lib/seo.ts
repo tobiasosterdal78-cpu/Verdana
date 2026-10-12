@@ -17,10 +17,10 @@ type PageMeta = {
 };
 
 /** The share image: the owner's logo on the midnight band, 1200 x 630. */
-const SHARE_IMAGE = { url: "/brand/verdana-og.png", width: 1200, height: 630 } as const;
+const SHARE_IMAGE = { url: "/brand/vardena-og.png", width: 1200, height: 630 } as const;
 const SHARE_ALT: Record<Locale, string> = {
-  en: "Verdana, Business Central consultancy in Sweden",
-  sv: "Verdana, Business Central-konsulter i Sverige",
+  en: "Vardena, Business Central consultancy in Sweden",
+  sv: "Vardena, Business Central-konsulter i Sverige",
 };
 
 /**
@@ -74,17 +74,18 @@ export function organizationNode(description: string) {
     "@type": "Organization",
     "@id": organizationId,
     name: site.name,
-    alternateName: "Verdana Business Central",
-    // The name is shared with a typeface and other firms; this says which Verdana.
+    alternateName: "Vardena Business Central",
+    // Says which Vardena, should the name be shared with other firms.
     disambiguatingDescription: "Microsoft Dynamics 365 Business Central consultancy based in Sweden",
     url: absoluteUrl("/"),
     logo: {
       "@type": "ImageObject",
-      url: absoluteUrl("/brand/verdana-mark-512.png"),
+      url: absoluteUrl("/brand/vardena-mark-512.png"),
       width: 512,
       height: 512,
     },
     description,
+    email: company.email,
     iso6523Code: `0007:${company.orgNumber.replace("-", "")}`,
     areaServed: { "@type": "Country", name: "Sweden" },
     knowsAbout: [
@@ -104,7 +105,7 @@ export function websiteNode() {
     "@type": "WebSite",
     "@id": websiteId,
     name: site.name,
-    alternateName: ["Verdana Business Central"],
+    alternateName: ["Vardena Business Central"],
     url: absoluteUrl("/"),
     inLanguage: [LOCALE_TAGS.en, LOCALE_TAGS.sv],
     publisher: { "@id": organizationId },

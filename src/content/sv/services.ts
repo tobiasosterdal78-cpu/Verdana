@@ -9,7 +9,7 @@ export const services: Record<ServiceId, Service> = {
     name: "Rådgivning och förstudie",
     blurb: "Rätt vägval innan ni investerar i ett nytt affärssystem.",
     menu: "Förstudie och rätt systemval",
-    metaTitle: "ERP-rådgivning inför val av affärssystem | Verdana",
+    metaTitle: "ERP-rådgivning inför val av affärssystem | Vardena",
     metaDescription:
       "Ska ni välja eller byta affärssystem? Vi kartlägger behov, kostnader och vägval och ger ett tydligt beslutsunderlag innan ni investerar i Business Central.",
     serviceType: "ERP-rådgivning och förstudie",
@@ -81,7 +81,7 @@ export const services: Record<ServiceId, Service> = {
     name: "Implementering",
     blurb: "Business Central infört med tydlig plan, budget och ansvar.",
     menu: "Från plan till driftstart",
-    metaTitle: "Implementering av Business Central | Verdana",
+    metaTitle: "Implementering av Business Central | Vardena",
     metaDescription:
       "Implementering av Microsoft Dynamics 365 Business Central med tydlig plan, datamigrering, integrationer, test och utbildning. För svenska företag.",
     serviceType: "Implementering av Microsoft Dynamics 365 Business Central",
@@ -167,7 +167,7 @@ export const services: Record<ServiceId, Service> = {
     name: "Migrering från Dynamics NAV",
     blurb: "Från Navision eller NAV till Business Central i molnet.",
     menu: "Uppgradering från NAV/Navision",
-    metaTitle: "Från Navision till Business Central – migrering | Verdana",
+    metaTitle: "Från Navision till Business Central – migrering | Vardena",
     metaDescription:
       "Kör ni Dynamics NAV (Navision)? Vi hjälper er att uppgradera eller migrera till Business Central: data, anpassningar och en trygg övergång i molnet.",
     serviceType: "Migrering från Microsoft Dynamics NAV till Business Central",
@@ -247,7 +247,7 @@ export const services: Record<ServiceId, Service> = {
     name: "Integrationer och utveckling",
     blurb: "Koppla ihop webbshop, bank, logistik och Microsoft 365.",
     menu: "Webbshop, bank och logistik",
-    metaTitle: "Integrationer och utveckling i Business Central | Verdana",
+    metaTitle: "Integrationer och utveckling i Business Central | Vardena",
     metaDescription:
       "Integrera Business Central med webbshop, bank, logistik, Microsoft 365 och Power BI. Tillägg i AL som klarar uppdateringar. Konsulter i Sverige.",
     serviceType: "Integrationer och utveckling för Microsoft Dynamics 365 Business Central",
@@ -319,7 +319,7 @@ export const services: Record<ServiceId, Service> = {
     name: "Support och optimering",
     blurb: "Snabb hjälp i vardagen och ett system som blir bättre.",
     menu: "Hjälp i vardagen och förbättringar",
-    metaTitle: "Support och optimering av Business Central | Verdana",
+    metaTitle: "Support och optimering av Business Central | Vardena",
     metaDescription:
       "Support för Business Central när något krånglar, och optimering när verksamheten förändras. Felsökning, rättningar, förbättringar och uppdateringar.",
     serviceType: "Support och optimering för Microsoft Dynamics 365 Business Central",
@@ -386,7 +386,7 @@ export const services: Record<ServiceId, Service> = {
     name: "Förvaltning",
     blurb: "Uppdateringar, ändringar och ansvar samlat på ett ställe.",
     menu: "Uppdateringar, ändringar och ansvar",
-    metaTitle: "Förvaltning av Business Central | Verdana",
+    metaTitle: "Förvaltning av Business Central | Vardena",
     metaDescription:
       "Förvaltning av Business Central: uppdateringar, ändringshantering, behörigheter, dokumentation och övervakning – ansvar samlat på ett ställe.",
     serviceType: "Förvaltning av Microsoft Dynamics 365 Business Central",
@@ -453,7 +453,7 @@ export const services: Record<ServiceId, Service> = {
     name: "Konsulttjänster",
     blurb: "Business Central-kompetens som förstärker ert team.",
     menu: "Kompetens som förstärker ert team",
-    metaTitle: "Hyr Business Central-konsulter till ert team | Verdana",
+    metaTitle: "Hyr Business Central-konsulter till ert team | Vardena",
     metaDescription:
       "Hyr Business Central-konsulter som förstärker ert team: projektledning, lösningsdesign, ekonomi, logistik, utveckling och kravställning.",
     serviceType: "Konsulttjänster inom Microsoft Dynamics 365 Business Central",

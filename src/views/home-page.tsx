@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { NavTimeline } from "@/components/home/nav-timeline";
+import { AreaFigure, CareMock, DashboardMock, ProjectMock, WarehouseMock } from "@/components/home/area-mocks";
+import { AreaIntro, AreaPoints, AreaText } from "@/components/home/area-text";
+import { NavNotice } from "@/components/home/nav-timeline";
 import { OrderFlow } from "@/components/home/order-flow";
-import { Icon } from "@/components/icons";
+import { Icon, type IconName } from "@/components/icons";
 import { JsonLd } from "@/components/json-ld";
 import { PinField } from "@/components/pin-field";
+import { ContactPrompt, ContactRow } from "@/components/ui/contact-prompt";
 import { CtaBand } from "@/components/ui/cta-band";
 import { FaqList } from "@/components/ui/faq-list";
 import { SectionHead } from "@/components/ui/section-head";
@@ -15,6 +18,36 @@ import { href, insightHref, serviceHref, SERVICE_IDS } from "@/lib/routes";
 import { faqNode, organizationNode, pageMetadata, webPageNode, websiteNode } from "@/lib/seo";
 
 const PHASES: Phase[] = ["implement", "operate"];
+
+/** The five areas in page order, with the anchor each one answers to. */
+const AREAS = [
+  { id: "projects", icon: "projects" },
+  { id: "warehouse", icon: "warehouse" },
+  { id: "commerce", icon: "ecommerce" },
+  { id: "reporting", icon: "report" },
+  { id: "care", icon: "support" },
+] as const satisfies readonly { id: string; icon: IconName }[];
+
+const AREA_ANCHOR = {
+  projects: "area-projects",
+  warehouse: "area-warehouse",
+  commerce: "area-commerce",
+  reporting: "area-reporting",
+  care: "area-care",
+} as const;
+
+/** The section of the Business Central page that lists what the system covers. */
+const COVERS_ANCHOR: Record<Locale, string> = { en: "what-it-covers", sv: "vad-det-tacker" };
+
+/** Text link with an arrow, for the quieter ways onward from a section. */
+function AreaLink({ href: target, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <Link href={target} className="group inline-flex items-center gap-2 text-[0.98rem] font-[560] text-accent-ink">
+      {children}
+      <Icon name="arrowRight" size={16} className="transition-transform group-hover:translate-x-1" />
+    </Link>
+  );
+}
 
 export function homeMetadata(locale: Locale): Metadata {
   const { home } = getContent(locale);
@@ -105,29 +138,8 @@ export function HomePage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      {/* Dynamics NAV */}
-      <section aria-labelledby="nav-title" className="bg-canvas-raised">
-        <div className="wrap section-pad">
-          <SectionHead title={t.nav.title} lead={t.nav.lead} id="nav-title" />
-          <div className="mt-14">
-            <NavTimeline locale={locale} t={t.nav} />
-          </div>
-          <div className="mt-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-            <p className="max-w-2xl text-[0.9rem] text-fg-subtle">{t.nav.source}</p>
-            <div className="flex flex-wrap gap-3">
-              <Link href={serviceHref(locale, "migration")} className="btn btn-primary">
-                {t.nav.primary} <Icon name="arrowRight" size={18} />
-              </Link>
-              <Link href={insightHref(locale, "navToBusinessCentral")} className="btn btn-ghost">
-                {t.nav.secondary}
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Business Central */}
-      <section aria-labelledby="bc-title" className="bg-canvas">
+      {/* Business Central: what the system is, before the page goes into five areas. */}
+      <section aria-labelledby="bc-title" className="bg-canvas-raised">
         <div className="wrap section-pad">
           <div className="grid gap-14 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-20">
             <div>
@@ -162,9 +174,106 @@ export function HomePage({ locale }: { locale: Locale }) {
               ))}
             </ul>
           </div>
-          <div className="mt-16 rounded-panel border border-hairline bg-canvas-raised px-6 py-10 sm:px-8 lg:py-12">
-            <OrderFlow t={t.businessCentral.flow} />
+        </div>
+      </section>
+
+      {/* Areas 01-03, each beside its illustration. 04 and 05 follow in bands of their own. */}
+      <section aria-labelledby="areas-title" className="bg-canvas">
+        <div className="wrap section-pad">
+          <SectionHead title={t.areas.title} lead={t.areas.lead} id="areas-title" />
+          <nav aria-label={t.areas.label} className="mt-10">
+            <ul className="flex flex-wrap gap-2">
+              {AREAS.map((area) => (
+                <li key={area.id}>
+                  <a
+                    href={`#${AREA_ANCHOR[area.id]}`}
+                    className="inline-flex items-center gap-2 rounded-full border border-hairline-strong px-4 py-2 text-[0.92rem] font-[560] text-fg-muted transition-colors hover:border-accent hover:text-fg"
+                  >
+                    <Icon name={area.icon} size={17} className="text-accent-ink" />
+                    {t.areas[area.id].name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="mt-16 space-y-20 lg:mt-24 lg:space-y-32">
+            <div
+              id={AREA_ANCHOR.projects}
+              className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-20"
+            >
+              <AreaText index={1} area={t.areas.projects} id="area-projects-title">
+                <AreaLink href={href(locale, "businessCentral", COVERS_ANCHOR[locale])}>
+                  {t.areas.projects.link}
+                </AreaLink>
+              </AreaText>
+              <AreaFigure caption={t.areas.projects.caption}>
+                <ProjectMock t={t.areas.projects.mock} />
+              </AreaFigure>
+            </div>
+
+            <div
+              id={AREA_ANCHOR.warehouse}
+              className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-20"
+            >
+              <div className="lg:order-2">
+                <AreaText index={2} area={t.areas.warehouse} id="area-warehouse-title">
+                  <AreaLink href={href(locale, "businessCentral", COVERS_ANCHOR[locale])}>
+                    {t.areas.warehouse.link}
+                  </AreaLink>
+                </AreaText>
+              </div>
+              <AreaFigure caption={t.areas.warehouse.caption}>
+                <WarehouseMock t={t.areas.warehouse.mock} />
+              </AreaFigure>
+            </div>
+
+            <div id={AREA_ANCHOR.commerce}>
+              <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-20">
+                <AreaIntro index={3} area={t.areas.commerce} id="area-commerce-title" />
+                <div className="lg:pt-11">
+                  <AreaPoints area={t.areas.commerce}>
+                    <AreaLink href={serviceHref(locale, "integrations")}>{t.areas.commerce.link}</AreaLink>
+                  </AreaPoints>
+                </div>
+              </div>
+              <div className="mt-12 rounded-panel border border-hairline bg-canvas-raised px-6 py-10 sm:px-8 lg:py-12">
+                <OrderFlow t={t.businessCentral.flow} />
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* Area 04: reporting, with the dashboards across the full width. */}
+      <section id={AREA_ANCHOR.reporting} aria-labelledby="area-reporting-title" className="tone-night">
+        <div className="wrap section-pad">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-20">
+            <AreaIntro index={4} area={t.areas.reporting} id="area-reporting-title" as="h2" />
+            <div className="lg:pt-11">
+              <AreaPoints area={t.areas.reporting}>
+                <AreaLink href={serviceHref(locale, "integrations")}>{t.areas.reporting.link}</AreaLink>
+              </AreaPoints>
+            </div>
+          </div>
+          <div className="mt-14">
+            <AreaFigure caption={t.areas.reporting.caption}>
+              <DashboardMock t={t.areas.reporting.mock} />
+            </AreaFigure>
+          </div>
+        </div>
+      </section>
+
+      {/* Area 05: application management and support. */}
+      <section id={AREA_ANCHOR.care} aria-labelledby="area-care-title" className="bg-canvas-raised">
+        <div className="wrap section-pad grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-20">
+          <AreaText index={5} area={t.areas.care} id="area-care-title" as="h2">
+            <AreaLink href={serviceHref(locale, "support")}>{t.areas.care.link}</AreaLink>
+            <AreaLink href={serviceHref(locale, "management")}>{t.areas.care.secondLink}</AreaLink>
+          </AreaText>
+          <AreaFigure caption={t.areas.care.caption}>
+            <CareMock t={t.areas.care.mock} />
+          </AreaFigure>
         </div>
       </section>
 
@@ -172,9 +281,9 @@ export function HomePage({ locale }: { locale: Locale }) {
       <section aria-labelledby="integrations-title" className="tone-night relative overflow-hidden">
         <div className="wrap section-pad relative">
           <SectionHead title={t.integrations.title} lead={t.integrations.lead} id="integrations-title" />
-          <ul className="mt-14 grid gap-px overflow-hidden rounded-panel border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-14 grid gap-px overflow-hidden rounded-panel border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-5">
             {t.integrations.items.map((item) => (
-              <li key={item.title} className="spotlight bg-[#070c1a]/95 p-6 lg:p-7">
+              <li key={item.title} className="spotlight bg-[#070c1a]/95 p-6 sm:last:col-span-2 lg:p-7 lg:last:col-span-1">
                 <Icon name={item.icon} size={26} className="text-glacier" />
                 <p className="mt-5 font-semibold tracking-tight text-fg">{item.title}</p>
                 <p className="mt-2 text-[0.95rem] leading-snug text-fg-subtle">{item.text}</p>
@@ -184,6 +293,31 @@ export function HomePage({ locale }: { locale: Locale }) {
           <Link href={serviceHref(locale, "integrations")} className="btn btn-ghost mt-10">
             {t.integrations.cta} <Icon name="arrowRight" size={18} />
           </Link>
+        </div>
+      </section>
+
+      {/* Dynamics NAV: a notice, not a chapter. The guide and the service carry the detail. */}
+      <section aria-labelledby="nav-title" className="bg-canvas">
+        <div className="wrap py-16 lg:py-20">
+          <div className="grid gap-9 rounded-panel border border-hairline bg-canvas-raised p-7 sm:p-9 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-center lg:gap-14 lg:p-11">
+            <div>
+              <h2 id="nav-title" className="type-h3 text-fg">
+                {t.nav.title}
+              </h2>
+              <p className="mt-3 max-w-md text-[1.02rem] leading-relaxed text-fg-muted">{t.nav.lead}</p>
+              <div className="mt-6 flex flex-wrap items-center gap-x-7 gap-y-3">
+                <AreaLink href={serviceHref(locale, "migration")}>{t.nav.primary}</AreaLink>
+                <AreaLink href={insightHref(locale, "navToBusinessCentral")}>{t.nav.secondary}</AreaLink>
+              </div>
+            </div>
+            <div>
+              <p className="text-[0.82rem] font-[560] text-fg-subtle">{t.nav.until}</p>
+              <div className="mt-3">
+                <NavNotice locale={locale} t={t.nav} />
+              </div>
+              <p className="mt-3 text-[0.8rem] leading-snug text-fg-subtle">{t.nav.source}</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -206,6 +340,7 @@ export function HomePage({ locale }: { locale: Locale }) {
               </li>
             ))}
           </ol>
+          <ContactRow locale={locale} className="mt-12" />
         </div>
       </section>
 
@@ -240,6 +375,7 @@ export function HomePage({ locale }: { locale: Locale }) {
               {t.faq.title}
             </h2>
             <p className="type-lead mt-6 max-w-md text-fg-muted">{t.faq.lead}</p>
+            <ContactPrompt locale={locale} kind="faq" linkOnly className="mt-6" />
           </div>
           <FaqList faqs={t.faq.items} />
         </div>

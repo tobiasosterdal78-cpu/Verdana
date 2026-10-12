@@ -5,17 +5,17 @@ const updated = "2026-10-11";
 
 export const legal: Record<LegalId, Doc> = {
   privacy: {
-    metaTitle: "Integritetspolicy | Verdana",
+    metaTitle: "Integritetspolicy | Vardena",
     metaDescription:
-      "Så behandlar Verdana personuppgifter från kontaktformuläret och serverloggar: varför vi gör det, hur länge vi sparar dem och vilka rättigheter du har.",
+      "Så behandlar Vardena personuppgifter från kontaktformuläret och serverloggar: varför vi gör det, hur länge vi sparar dem och vilka rättigheter du har.",
     title: "Integritetspolicy",
-    lead: "Här beskriver vi vilka personuppgifter Verdana behandlar när du besöker webbplatsen eller kontaktar oss, varför vi gör det och vilka rättigheter du har.",
+    lead: "Här beskriver vi vilka personuppgifter Vardena behandlar när du besöker webbplatsen eller kontaktar oss, varför vi gör det och vilka rättigheter du har.",
     updated,
     body: [
       { type: "h2", text: "Personuppgiftsansvarig", id: "ansvarig" },
       {
         type: "p",
-        text: "Verdana är personuppgiftsansvarig för den behandling som beskrivs här. Har du frågor om hur vi hanterar dina uppgifter, eller vill du använda någon av dina rättigheter, når du oss via [kontaktsidan](/sv/kontakt).",
+        text: "Vardena är personuppgiftsansvarig för den behandling som beskrivs här. Har du frågor om hur vi hanterar dina uppgifter, eller vill du använda någon av dina rättigheter, når du oss via [kontaktsidan](/sv/kontakt).",
       },
       { type: "h2", text: "Vilka uppgifter vi behandlar och var de kommer ifrån", id: "uppgifter" },
       { type: "h3", text: "När du använder kontaktformuläret" },
@@ -142,9 +142,9 @@ export const legal: Record<LegalId, Doc> = {
   },
 
   cookies: {
-    metaTitle: "Cookiepolicy | Verdana",
+    metaTitle: "Cookiepolicy | Vardena",
     metaDescription:
-      "Verdanas webbplats sätter inga cookies och använder ingen analys eller spårning. Det enda som sparas i webbläsaren är ditt val av ljust eller mörkt tema.",
+      "Vardenas webbplats sätter inga cookies och använder ingen analys eller spårning. Det enda som sparas i webbläsaren är ditt val av ljust eller mörkt tema.",
     title: "Cookies",
     lead: "Den här webbplatsen sätter inga cookies. Därför möts du inte av någon cookieruta här.",
     updated,
@@ -204,9 +204,9 @@ export const legal: Record<LegalId, Doc> = {
   },
 
   terms: {
-    metaTitle: "Användarvillkor | Verdana",
+    metaTitle: "Användarvillkor | Vardena",
     metaDescription:
-      "Villkoren för att använda Verdanas webbplats: allmän information, Microsofts listpriser med datum, länkar till andra webbplatser, upphovsrätt och ansvar.",
+      "Villkoren för att använda Vardenas webbplats: allmän information, Microsofts listpriser med datum, länkar till andra webbplatser, upphovsrätt och ansvar.",
     title: "Användarvillkor",
     lead: "De här villkoren gäller när du använder webbplatsen. Genom att använda den godkänner du villkoren.",
     updated,
@@ -214,7 +214,7 @@ export const legal: Record<LegalId, Doc> = {
       { type: "h2", text: "Om webbplatsen", id: "om" },
       {
         type: "p",
-        text: "Webbplatsen drivs av Verdana. Här beskriver vi våra tjänster kring Microsoft Dynamics 365 Business Central, och här kan du kontakta oss. Det finns inga användarkonton och inget går att köpa på webbplatsen.",
+        text: "Webbplatsen drivs av Vardena. Här beskriver vi våra tjänster kring Microsoft Dynamics 365 Business Central, och här kan du kontakta oss. Det finns inga användarkonton och inget går att köpa på webbplatsen.",
       },
       { type: "h2", text: "Allmän information, inte rådgivning", id: "information" },
       {
@@ -234,7 +234,7 @@ export const legal: Record<LegalId, Doc> = {
       { type: "h2", text: "Upphovsrätt och varumärken", id: "upphovsratt" },
       {
         type: "p",
-        text: "Texter, bilder och formgivning på webbplatsen tillhör Verdana om inget annat anges. Du får gärna länka till webbplatsen och citera kortare avsnitt med angivande av källa. Annan användning kräver vårt skriftliga tillstånd.",
+        text: "Texter, bilder och formgivning på webbplatsen tillhör Vardena om inget annat anges. Du får gärna länka till webbplatsen och citera kortare avsnitt med angivande av källa. Annan användning kräver vårt skriftliga tillstånd.",
       },
       {
         type: "p",
@@ -248,7 +248,7 @@ export const legal: Record<LegalId, Doc> = {
       { type: "h2", text: "Ansvar", id: "ansvar" },
       {
         type: "p",
-        text: "I den utsträckning lagen tillåter ansvarar Verdana inte för skada som uppstår till följd av att informationen på webbplatsen används, eller av att webbplatsen tillfälligt inte är tillgänglig.",
+        text: "I den utsträckning lagen tillåter ansvarar Vardena inte för skada som uppstår till följd av att informationen på webbplatsen används, eller av att webbplatsen tillfälligt inte är tillgänglig.",
       },
       { type: "h2", text: "Ändringar och tillämplig lag", id: "andringar" },
       {
@@ -263,9 +263,9 @@ export const legal: Record<LegalId, Doc> = {
   },
 
   accessibility: {
-    metaTitle: "Tillgänglighetsredogörelse | Verdana",
+    metaTitle: "Tillgänglighetsredogörelse | Vardena",
     metaDescription:
-      "Så tillgänglig är Verdanas webbplats: vårt mål om WCAG 2.2 nivå AA, vad webbplatsen stöder, hur vi testat, kända brister och hur du rapporterar problem.",
+      "Så tillgänglig är Vardenas webbplats: vårt mål om WCAG 2.2 nivå AA, vad webbplatsen stöder, hur vi testat, kända brister och hur du rapporterar problem.",
     title: "Tillgänglighetsredogörelse",
     lead: "Vi vill att alla ska kunna använda webbplatsen, oavsett funktionsförmåga eller vilken enhet de använder. Här beskriver vi hur långt vi har kommit.",
     updated,
@@ -321,9 +321,9 @@ export const legal: Record<LegalId, Doc> = {
   },
 
   security: {
-    metaTitle: "Rapportera en säkerhetsbrist | Verdana",
+    metaTitle: "Rapportera en säkerhetsbrist | Vardena",
     metaDescription:
-      "Har du hittat en säkerhetsbrist på Verdanas webbplats? Så rapporterar du den till oss, vad vi ber dig om och vad du kan förvänta dig av oss i gengäld.",
+      "Har du hittat en säkerhetsbrist på Vardenas webbplats? Så rapporterar du den till oss, vad vi ber dig om och vad du kan förvänta dig av oss i gengäld.",
     title: "Rapportera en säkerhetsbrist",
     lead: "Har du hittat en säkerhetsbrist på webbplatsen vill vi gärna veta det. Tack för att du hjälper oss att hålla webbplatsen säker.",
     updated,

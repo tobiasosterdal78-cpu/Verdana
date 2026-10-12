@@ -2,7 +2,7 @@ import type { SiteCopy } from "@/content/types";
 
 export const site: SiteCopy = {
   skipToContent: "Hoppa till innehållet",
-  homeLabel: "Verdana, till startsidan",
+  homeLabel: "Vardena, till startsidan",
   primaryNav: "Huvudmeny",
   nav: { services: "Tjänster", businessCentral: "Business Central", insights: "Insikter", about: "Om oss" },
   cta: "Boka ett samtal",
@@ -52,6 +52,11 @@ export const site: SiteCopy = {
       "Ni får ett konkret förslag på hur ni kan gå vidare.",
     ],
   },
+  contactPrompt: {
+    faq: { text: "Hittar ni inte svaret?", link: "Ställ en fråga" },
+    talk: { text: "Vill ni hellre gå igenom det med en konsult?", link: "Boka ett samtal" },
+    legal: { text: "Har du frågor om den här sidan?", link: "Kontakta oss" },
+  },
   footer: {
     tagline:
       "Konsulter inom Microsoft Dynamics 365 Business Central. Vi hjälper svenska företag att välja, införa och utveckla sitt affärssystem.",
@@ -88,10 +93,11 @@ export const site: SiteCopy = {
       "Microsoft, Dynamics 365, Business Central, Dynamics NAV, Microsoft 365, Power BI och Power Platform är varumärken som tillhör Microsoft-koncernen.",
   },
   notFound: {
-    metaTitle: "Sidan finns inte | Verdana",
+    metaTitle: "Sidan finns inte | Vardena",
     title: "Sidan finns inte.",
     text: "Adressen kan vara felstavad, eller så har sidan flyttats. Börja från startsidan eller gå direkt till våra tjänster.",
     home: "Till startsidan",
     services: "Se våra tjänster",
+    contact: "Kontakta oss",
   },
 };

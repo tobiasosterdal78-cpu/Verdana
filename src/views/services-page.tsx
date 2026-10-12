@@ -27,7 +27,11 @@ export function ServicesPage({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <PageHero crumbs={crumbs} breadcrumbsLabel={site.breadcrumbs} title={t.title} lead={t.lead} />
+      <PageHero crumbs={crumbs} breadcrumbsLabel={site.breadcrumbs} title={t.title} lead={t.lead}>
+        <Link href={href(locale, "contact")} className="btn btn-primary">
+          {site.cta} <Icon name="arrowRight" size={18} />
+        </Link>
+      </PageHero>
 
       {PHASES.map((phase, index) => (
         <section

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Icon } from "@/components/icons";
 import { JsonLd } from "@/components/json-ld";
+import { ContactPrompt } from "@/components/ui/contact-prompt";
 import { CtaBand } from "@/components/ui/cta-band";
 import { DocBody } from "@/components/ui/doc-body";
 import { FaqList } from "@/components/ui/faq-list";
@@ -48,7 +49,12 @@ export function LegalPage({ locale, id }: { locale: Locale; id: LegalId }) {
           </>
         }
       />
-      <DocBody doc={doc} contentsLabel={pages.businessCentral.contents} sourcesLabel={site.sources} />
+      <DocBody
+        doc={doc}
+        contentsLabel={pages.businessCentral.contents}
+        sourcesLabel={site.sources}
+        closing={<ContactPrompt locale={locale} kind="legal" />}
+      />
       <JsonLd
         nodes={[
           webPageNode(locale, { name: doc.metaTitle, description: doc.metaDescription, path: href(locale, id) }),
@@ -126,6 +132,7 @@ export function BusinessCentralPage({ locale }: { locale: Locale }) {
               </div>
             ))}
           </div>
+          <ContactPrompt locale={locale} kind="talk" className="mt-10" />
         </div>
       </section>
 
@@ -159,7 +166,10 @@ export function BusinessCentralPage({ locale }: { locale: Locale }) {
             topic={topics.get("faq")}
             allTopics={pages.businessCentral.allTopics}
           />
-          <FaqList faqs={doc.faqs} />
+          <div>
+            <FaqList faqs={doc.faqs} />
+            <ContactPrompt locale={locale} kind="faq" className="mt-8" />
+          </div>
         </div>
       </section>
 
@@ -365,6 +375,8 @@ export function ArticlePage({ locale, id }: { locale: Locale; id: InsightId }) {
         sourcesLabel={site.sources}
         faqs={article.faqs}
         faqTitle={pages.service.faq}
+        rail={<ContactPrompt locale={locale} kind="talk" className="text-[0.92rem]" />}
+        closing={<ContactPrompt locale={locale} kind="faq" />}
       />
       <CtaBand locale={locale} />
       <JsonLd

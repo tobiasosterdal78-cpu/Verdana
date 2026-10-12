@@ -2,6 +2,7 @@
 
 import { useActionState, useEffect, useRef, useState } from "react";
 import { sendContact, type ContactState } from "@/components/contact/actions";
+import { enquiryText } from "@/components/contact/enquiry";
 import { Icon } from "@/components/icons";
 import type { ContactField, ContactFormCopy } from "@/content/types";
 import type { Locale } from "@/lib/i18n";
@@ -13,7 +14,7 @@ const inputClass =
 
 const errorText = "mt-2 text-[0.9rem] font-[560] text-[#d92d20] dark:text-[#ff8a80]";
 
-export function ContactForm({ locale, t }: { locale: Locale; t: ContactFormCopy }) {
+export function ContactForm({ locale, t, email }: { locale: Locale; t: ContactFormCopy; email: string }) {
   const [state, formAction, pending] = useActionState(sendContact, initialState);
   const [startedAt, setStartedAt] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
@@ -44,6 +45,23 @@ export function ContactForm({ locale, t }: { locale: Locale; t: ContactFormCopy 
   const error = (field: ContactField) => state.errors?.[field];
   const describedBy = (field: ContactField) => (error(field) ? `${field}-error` : undefined);
   const values = state.values ?? {};
+  // When the form could not send, the same message can go from the visitor's own mail program.
+  const mailto =
+    state.status === "unavailable" || state.status === "failed"
+      ? `mailto:${email}?subject=${encodeURIComponent(`${t.emailSubject}: ${values.company ?? ""}`)}&body=${encodeURIComponent(
+          enquiryText(
+            {
+              name: values.name ?? "",
+              company: values.company ?? "",
+              email: values.email ?? "",
+              phone: values.phone ?? "",
+              interest: values.interest ?? "",
+              message: values.message ?? "",
+            },
+            t.labels,
+          ),
+        )}`
+      : null;
   const input = (field: Exclude<ContactField, "consent" | "interest" | "message">, props: React.InputHTMLAttributes<HTMLInputElement>) => (
     <input
       id={field}
@@ -153,6 +171,12 @@ export function ContactForm({ locale, t }: { locale: Locale; t: ContactFormCopy 
           <p className="mt-6 rounded-xl border border-[#d92d20]/30 px-4 py-3 text-[0.95rem] font-[560] text-[#d92d20] dark:text-[#ff8a80]">
             {t.status.failed}
           </p>
+        ) : null}
+        {mailto ? (
+          <a href={mailto} className="btn btn-ghost mt-4 w-full sm:w-auto">
+            <Icon name="mail" size={18} />
+            {t.mailFallback}
+          </a>
         ) : null}
       </div>
 

@@ -179,7 +179,7 @@ export function SiteHeader({
 
       <div className="wrap flex h-16 items-center gap-3">
         <Link href={links.home} aria-label={t.homeLabel} className="-my-1 shrink-0 rounded-md py-1">
-          <BrandLockup className="h-[1.85rem] sm:h-[2.1rem]" priority />
+          <BrandLockup className="h-[1.6rem] sm:h-[2.1rem]" priority />
         </Link>
 
         <nav ref={nav} aria-label={t.primaryNav} className="ml-5 hidden shrink-0 lg:block xl:ml-12">
@@ -228,8 +228,14 @@ export function SiteHeader({
             <LanguageSwitcher label={t.language} />
           </div>
           <span aria-hidden="true" className="mx-2 hidden h-6 w-px bg-hairline-strong lg:block" />
-          <Link href={links.contact} className="btn btn-primary hidden min-h-10 px-5 text-[0.95rem] lg:inline-flex">
-            {t.cta}
+          {/* Always within reach: a short label on phones, the full one from sm.
+              Below 350px there is no room beside the lockup; the menu has it. */}
+          <Link
+            href={links.contact}
+            className="btn btn-primary min-h-9 px-3.5 text-[0.875rem] max-[349px]:hidden sm:min-h-10 sm:px-5 sm:text-[0.95rem]"
+          >
+            <span className="sm:hidden">{t.footer.links.contact}</span>
+            <span className="max-sm:hidden">{t.cta}</span>
           </Link>
           <button
             ref={mobileButton}

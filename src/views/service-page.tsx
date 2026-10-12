@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Icon } from "@/components/icons";
 import { JsonLd } from "@/components/json-ld";
+import { ContactPrompt, ContactRow } from "@/components/ui/contact-prompt";
 import { CtaBand } from "@/components/ui/cta-band";
 import { FaqList } from "@/components/ui/faq-list";
 import { PageHero } from "@/components/ui/page-hero";
@@ -113,6 +114,7 @@ export function ServicePage({ locale, id }: { locale: Locale; id: ServiceId }) {
               </li>
             ))}
           </ol>
+          <ContactRow locale={locale} className="mt-12" />
         </div>
       </section>
 
@@ -132,7 +134,10 @@ export function ServicePage({ locale, id }: { locale: Locale; id: ServiceId }) {
       {/* FAQ */}
       <section className="border-t border-hairline bg-canvas-raised">
         <div className="wrap section-pad grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-20">
-          <h2 className="type-h2 max-w-[12ch]">{t.faq}</h2>
+          <div>
+            <h2 className="type-h2 max-w-[12ch]">{t.faq}</h2>
+            <ContactPrompt locale={locale} kind="faq" className="mt-6" />
+          </div>
           <FaqList faqs={service.faqs} />
         </div>
       </section>
