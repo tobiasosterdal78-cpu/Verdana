@@ -1,7 +1,7 @@
 # Progress
 
 ## Current phase
-Redesign complete and verified locally; committed and pushed to https://github.com/Rolle161616/Verdana (private) on 2026-10-11. Not deployed. Search indexing is closed until launch.
+Redesign, the Vardena rename, the five home areas, the contact paths and the contact email are complete and verified locally, and pushed to https://github.com/tobiasosterdal78-cpu/Verdana (private) on 2026-10-12. Not deployed. Search indexing is closed until launch.
 
 ## Completed
 - Research: SEO keywords, Swedish ERP market, competitors, Business Central facts, technical SEO, design direction and icons (docs/reports/Verdana SEO and market research.md, notes in docs/research_notes/).
@@ -15,8 +15,8 @@ Redesign complete and verified locally; committed and pushed to https://github.c
 - Footer carries the organisation number 559602-6616.
 - Enquiries go to hello@vardena.se (2026-10-12): email delivery through Microsoft Graph, a `mailto:` fallback when it cannot send, and the address on the contact page and in the footer.
 - Renamed to Vardena (2026-10-12) across copy, metadata, structured data and docs. The header shows the V beside the name in type, the footer word is set in type, and the share image shows the V alone, because the supplied lockup and wordmark spell Verdana.
-- Home page refocused (2026-10-12): five areas with their own illustrations (time and projects, warehouse, logistics and e-commerce, reporting with Power BI, application management and support); the Dynamics NAV section is now a compact notice further down; the integrations grid lost the three tiles the areas replaced. Like the contact paths below, made in the Mac copy without Git: not committed or pushed yet.
-- Contact paths (2026-10-11): the contact button stays in the header at every width from 350px (short label on phones), and prompts lead to the contact page from the middle of long pages, the FAQ sections, the services hub hero, the legal pages and the 404 page. Made in a copy unpacked from a zip on Robin's Mac, without Git: not committed or pushed yet.
+- Home page refocused (2026-10-12): five areas with their own illustrations (time and projects, warehouse, logistics and e-commerce, reporting with Power BI, application management and support); the Dynamics NAV section is now a compact notice further down; the integrations grid lost the three tiles the areas replaced.
+- Contact paths (2026-10-11): the contact button stays in the header at every width from 350px (short label on phones), and prompts lead to the contact page from the middle of long pages, the FAQ sections, the services hub hero, the legal pages and the 404 page.
 
 ## Next
 Launch preparation, all requiring Robin's decisions (see TODO.md and DEPLOYMENT.md): domain and host, `SITE_URL` and `SITE_INDEXING=on`, the Entra application for the contact email, legal company details, the trademark check and Search Console and Bing verification.

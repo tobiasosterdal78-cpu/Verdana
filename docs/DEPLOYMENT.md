@@ -1,6 +1,6 @@
 # Deployment
 
-Not deployed. No hosting, domain or DNS has been configured. The code is on GitHub at https://github.com/Rolle161616/Verdana (private). Vercel and Loopia are Robin's suggested options; choose after the launch decisions below. Obtain explicit approval before launch, paid services or DNS changes, and preserve the existing email DNS records.
+Not deployed. No hosting, domain or DNS has been configured. The code is on GitHub at https://github.com/tobiasosterdal78-cpu/Verdana (private). Vercel and Loopia are Robin's suggested options; choose after the launch decisions below. Obtain explicit approval before launch, paid services or DNS changes, and preserve the existing email DNS records.
 
 ## Build
 `npm ci`, then `npm run build` and `npm run start`. Every page is statically generated; the contact form runs as a server action, so the host must run Next.js (not a plain static export).
